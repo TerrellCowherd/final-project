@@ -5,56 +5,12 @@ namespace SpriteKind {
     export const President = SpriteKind.create()
     export const PresidentFinal = SpriteKind.create()
 }
-let amber2: Sprite = null
-let dahlia2: Sprite = null
 let president: Sprite = null
+let amber: Sprite = null
 let presidentfinal: Sprite = null
 let lilac: Sprite = null
 let damber: Sprite = null
-function amber () {
-    amber2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . 2 2 2 2 2 2 2 2 . . . . 
-. . . 2 2 2 5 2 5 5 5 5 5 . . . 
-. . . 2 2 2 2 d 2 2 d 2 2 . . . 
-. . 2 2 2 2 d c 2 d d c 2 2 . . 
-. . 2 2 2 2 d 6 d d d 6 2 2 . . 
-. 2 . 2 2 2 d d d d d d 2 2 2 . 
-. . . 2 . 2 5 5 5 5 5 2 2 . . . 
-. . . . . d d 5 5 5 5 . . . . . 
-. . . . d . c c c c d . . . . . 
-. . . . c . c c c c . c . . . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . . . f f f d d f . . . . . 
-. . . . 6 6 6 6 6 6 6 6 . . . . 
-. . . . 6 6 6 6 . 6 6 6 . . . . 
-. . . d d d . . . . d d d . . . 
-`, SpriteKind.Player)
-}
-function dahlia () {
-    dahlia2 = sprites.create(img`
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . f f f f f f f . . . . . . . 
-. . . . . f f f f f f f f f . . . . . . 
-. . . . . f f d d f f f f f . . . . . . 
-. . . . f f f d d d f f f f f . . . . . 
-. . . . f f c d d d c d f f f . . . . . 
-. . . . f f d d d d d d f f f . . . . . 
-. . . . f f . 1 f d 1 . f f . . . . . . 
-. . . . . . c b f 1 c c c . . . . . . . 
-. . . . 5 c c b 1 b c c . c 5 . . . . . 
-. . . 5 f 5 . c b b c c . 5 f 5 . . . . 
-. . 5 5 5 f c f f f c f . f 5 5 5 . . . 
-. . 5 f f 5 f f f f f f f 5 f f 5 . . . 
-. 5 . f f f f f f f f f . f f f . 5 . . 
-. . . 5 . 5 b b . . b b . 5 . 5 . . . . 
-. . . . . . f . . . . f . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Dahlia)
-}
+let dahlia: Sprite = null
 function president1 () {
     president = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . 
@@ -80,6 +36,26 @@ f . f f f . . . . . . . . . . . f f f . f .
 f f f f f . . . . . . . . . . . f f f f f . 
 . f f f f . . . . . . . . . . . f f f f . . 
 `, SpriteKind.President)
+}
+function amber2 () {
+    amber = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . 2 2 2 5 2 5 5 5 5 5 . . . 
+. . . 2 2 2 2 d 2 2 d 2 2 . . . 
+. . 2 2 2 2 d c 2 d d c 2 2 . . 
+. . 2 2 2 2 d 6 d d d 6 2 2 . . 
+. 2 . 2 2 2 d d d d d d 2 2 2 . 
+. . . 2 . 2 5 5 5 5 5 2 2 . . . 
+. . . . . d d 5 5 5 5 . . . . . 
+. . . . d . c c c c d . . . . . 
+. . . . c . c c c c . c . . . . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . . . f f f d d f . . . . . 
+. . . . 6 6 6 6 6 6 6 6 . . . . 
+. . . . 6 6 6 6 . 6 6 6 . . . . 
+. . . d d d . . . . d d d . . . 
+`, SpriteKind.Player)
 }
 function president2 () {
     presidentfinal = sprites.create(img`
@@ -113,24 +89,24 @@ function president2 () {
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b f . . . . . . . . . f f . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b f . . . . . . f f b f . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b f . . . f f b b b f . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f f b b b b b b b b 5 b b b b b b b b b b b b b b b b 5 b b b b b b b b b b b f f f b b b b b f . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f f b b b b f b 5 5 b b b b b b b b b b b b b b 5 5 b f b b b b b b b b b b b b b b b b b f . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f b b b f b 5 5 5 b b b b b b b b b b b b 5 5 5 b f b b b b b b b b b b b b b b b b f . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f f f f . . f b b f b 5 5 5 5 5 b b b b b b b b 5 5 5 5 5 b f b b b b b b b b b b b b b b b f . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . f b b b b f f b b b b f b 5 5 5 5 5 5 b b b b 5 5 5 5 5 5 b f b b b b b b b b b b b b b b f f . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . f b b b b b b b b b b b f b b b b b b b b b b b b b b b b b b f b b b b b b b f b b b b f f . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . f . . . . . . . . . . . . . f b b b b b b b b b b b b f b 5 b b b b b b b b b b b b b b 5 b f b b b b b b b b f f f f . . . . . . . . . . . . . f . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . f f f . . . . . . . . . . . f b f f b b b b b b b b b b f 5 b b b b b b b b b b b b b b 5 f b b b b b b b b b f . . . . . . . . . . . . . . f f f . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . f b b f f . . . . . . . . . f f . . f b b b b b b b b b f 5 5 b b 5 b b b b b b 5 b b 5 5 f b b b b b b b b b b f f . . f . . . . . . . f f b b f . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . f b b b b f f . . . . . . . f . . . . f b b b b b b b b f c 5 5 b 5 5 b b b b 5 5 b 5 5 c f b b b b b b b b b b b b f f f . . . . . f f b b b b f . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . f b b c b b b f f . . . . . . . . . . . f f b b b b b b b f 5 5 5 5 5 5 b b 5 5 5 5 5 5 f . f b b b b b b b b b b b b b f . . . f f b b b b b b f . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . f b c c c b b b f f . . . . . . . . . . . f f b b b b f f b 5 5 5 5 5 5 5 5 5 5 5 5 b f . . f f b b b b b b b b b b f . . f f b b b b b b b f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f f b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b f f f b b b b b f . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f f b b b b f b b b b b b b b b b b b b b b b b b b b f b b b b b b b b b b b b b b b b b f . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f b b b f b b b b b b b b b b b b b b b b b b b b f b b b b b b b b b b b b b b b b f . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f f f f . . f b b f b b 5 b b b b b b b b b b b b b b 5 b b f b b b b b b b b b b b b b b b f . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . f b b b b f f b b b b f b 5 5 b b b b b b b b b b b b 5 5 b f b b b b b b b b b b b b b b f f . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . f b b b b b b b b b b b f b 5 5 5 b b b b b b b b b b 5 5 5 b f b b b b b b b f b b b b f f . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . f . . . . . . . . . . . . . f b b b b b b b b b b b b f b 5 5 5 5 5 b 5 b b 5 b 5 5 5 5 5 b f b b b b b b b b f f f f . . . . . . . . . . . . . f . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . f f f . . . . . . . . . . . f b f f b b b b b b b b b b f b 5 5 5 5 5 b b b b 5 5 5 5 5 b f b b b b b b b b b f . . . . . . . . . . . . . . f f f . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . f b b f f . . . . . . . . . f f . . f b b b b b b b b b f 5 b b b b b b b b b b b b b b 5 f b b b b b b b b b b f f . . f . . . . . . . f f b b f . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . f b b b b f f . . . . . . . f . . . . f b b b b b b b b f 5 5 b b b b b b b b b b b b 5 5 f b b b b b b b b b b b b f f f . . . . . f f b b b b f . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . f b b c b b b f f . . . . . . . . . . . f f b b b b b b b f 5 b b b b b 5 5 b b b b b 5 f . f b b b b b b b b b b b b b f . . . f f b b b b b b f . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . f b c c c b b b f f . . . . . . . . . . . f f b b b b f f b 5 5 b b 5 5 5 5 b b 5 5 b f . . f f b b b b b b b b b b f . . f f b b b b b b b f . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . f b b c c c c b b b f f f . . . . . . . . . . f f f f . f b 5 5 5 5 5 5 5 5 5 5 5 5 b f . . . . f f f f b b b b b f f f f b b b b b b b b b f . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . f b b c c c c c c b b b f f f f . . . . . . . . . . . . f b 5 5 5 5 5 5 5 5 5 5 b f . . . . . . . . . f f f f f f b b b b b b b b b b b f . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . f . . . f b b c c c c c c c c b b b b f f f f f . . . . . . . f b 5 5 5 5 5 5 5 5 5 5 b f . . . . . . . f f f f b b b b b b b b b b b b b b f . . . f . . . . . . . . . . . . . 
-. . . . . . . . . . . . f f f . . f b b c c c c c c c c c c b b b b b b f f f f f . . . f 5 b 5 5 5 5 5 5 b 5 f . . . f f f f f b b b b b b b b b b b b b b b b b f . . f f f . . . . . . . . . . . . . 
-. . . . . . . . . . . . f b b f f f b b c c c c c c c c c c c c c c b b b b b b b f f f f f b b b 5 5 b b b f f f f f b b b b b b b b b b b b b b b b b b b b b b f f f b b f . . . . . . . . . . . . . 
-. . . . . . . . . . . . f b b b b b b b c c c c c c c c c c c c c c c c c c b b b b b b b b f b b 5 5 b b f b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b f . . . . . . . . . . . . . 
+. . . . . . . . . . . . f f f . . f b b c c c c c c c c c c b b b b b b f f f f f . . . f b 5 5 5 5 5 5 5 5 b f . . . f f f f f b b b b b b b b b b b b b b b b b f . . f f f . . . . . . . . . . . . . 
+. . . . . . . . . . . . f b b f f f b b c c c c c c c c c c c c c c b b b b b b b f f f f f b 5 5 b b 5 5 b f f f f f b b b b b b b b b b b b b b b b b b b b b b f f f b b f . . . . . . . . . . . . . 
+. . . . . . . . . . . . f b b b b b b b c c c c c c c c c c c c c c c c c c b b b b b b b b f b 5 b b 5 b f b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b f . . . . . . . . . . . . . 
 . . . . . . . . . . . . . f b c c b b c c c c c c c c c c c c c c c c c c c c c c c c b b b b f b b b b f b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b f . . . . . . . . . . . . . 
 . . . . . . . . . . . . . f b b c c c c c c c c c c c c c c c c c c c c c c c c c c c c c b b b f b b f b b b c c b b b b b b b b b b b b b b b b b b b b b b b b b b b b f . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . f b b c c c c c c c c c c c c c c c c c c c c c c c c c c c c c b b b f f b b b c b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b f . . . . . . . . . . . . . . 
@@ -231,4 +207,28 @@ function darkamber () {
 . . . . c c c . c c c c . . . . 
 . . . 5 5 5 . . . . 5 5 5 . . . 
 `, SpriteKind.DarkAmber)
+}
+function dahlia2 () {
+    dahlia = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . f f f f f f f . . . . . . . 
+. . . . . f f f f f f f f f . . . . . . 
+. . . . . f f d d f f f f f . . . . . . 
+. . . . f f f d d d f f f f f . . . . . 
+. . . . f f c d d d c d f f f . . . . . 
+. . . . f f d d d d d d f f f . . . . . 
+. . . . f f . 1 f d 1 . f f . . . . . . 
+. . . . . . c b f 1 c c c . . . . . . . 
+. . . . 5 c c b 1 b c c . c 5 . . . . . 
+. . . 5 f 5 . c b b c c . 5 f 5 . . . . 
+. . 5 5 5 f c f f f c f . f 5 5 5 . . . 
+. . 5 f f 5 f f f f f f f 5 f f 5 . . . 
+. 5 . f f f f f f f f f . f f f . 5 . . 
+. . . 5 . 5 b b . . b b . 5 . 5 . . . . 
+. . . . . . f . . . . f . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Dahlia)
 }
