@@ -5,105 +5,9 @@ namespace SpriteKind {
     export const President = SpriteKind.create()
     export const PresidentFinal = SpriteKind.create()
 }
-function amberstopright () {
-    if (amber.vx >= 0) {
-        animation.stopAnimation(animation.AnimationTypes.All, amber)
-        amber.setImage(img`
-. . . . . . . . . . . . . . . . 
-. . . . 2 2 2 2 2 2 2 2 . . . . 
-. . . 2 2 2 5 2 5 5 5 5 5 . . . 
-. . . 2 2 2 2 d 2 2 d 2 2 . . . 
-. . 2 2 2 2 d c 2 d d c 2 2 . . 
-. . 2 2 2 2 d 6 d d d 6 2 2 . . 
-. 2 . 2 2 2 d d d d d d 2 2 2 . 
-. . . 2 . 2 5 5 5 5 5 2 2 . . . 
-. . . . . d d 5 5 5 5 . . . . . 
-. . . . d . c c c c d . . . . . 
-. . . . c . c c c c . c . . . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . . . f f f d d f . . . . . 
-. . . . 6 6 6 6 6 6 6 6 . . . . 
-. . . . 6 6 6 6 . 6 6 6 . . . . 
-. . . d d d . . . . d d d . . . 
-`)
-    }
-}
-function amberrunleft () {
-    if (amber.vx >= -80) {
-        animation.runImageAnimation(
-        amber,
-        [img`
-. . . . 2 2 2 2 2 2 2 2 . . . . 
-. . . 5 5 5 5 5 2 5 2 2 2 . . . 
-. . . 2 2 d 2 2 d 2 2 2 2 . . . 
-. . 2 2 c d d 2 c d 2 2 2 2 . . 
-. . 2 2 6 d d d 6 d 2 2 2 2 . . 
-. 2 2 2 d d d d d d 2 2 2 . 2 . 
-. . . 2 2 5 5 5 5 5 2 . 2 . . . 
-. . c . . 5 5 5 5 d d d . . . . 
-. . . d d d c c c c . . d . . . 
-. . . . . . c c c c . . . c . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . d . f d d f f f . . . . . 
-. . . d 6 6 6 6 6 6 c 6 d . . . 
-. . . d 6 6 6 6 6 c 6 6 d . . . 
-. . . . . 6 6 . . 6 6 . d . . . 
-. . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . 
-. . . . 2 2 2 2 2 2 2 2 . . . . 
-. . . 5 5 5 5 5 2 5 2 2 2 . . . 
-. . . 2 2 d 2 2 d 2 2 2 2 . . . 
-. . 2 2 c d d 2 c d 2 2 2 2 . . 
-. . 2 2 6 d d d 6 d 2 2 2 2 . . 
-. 2 2 2 d d d d d d 2 2 2 . 2 . 
-. . . 2 2 5 5 5 5 5 2 . 2 . . . 
-. . . . . 5 5 5 5 d . . . . . . 
-. . . . . d c c c c d . . . . . 
-. . . . c d c c c d d . . . . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . . . f d d f f f . . . . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . . . 6 6 c 6 6 6 . . . . . 
-. . . . d d d . d d d . . . . . 
-`,img`
-. . . . 2 2 2 2 2 2 2 2 . . . . 
-. . . 5 5 5 5 5 2 5 2 2 2 . . . 
-. . . 2 2 d 2 2 d 2 2 2 2 . . . 
-. . 2 2 c d d 2 c d 2 2 2 2 . . 
-. . 2 2 6 d d d 6 d 2 2 2 2 . . 
-. 2 2 2 d d d d d d 2 2 2 . 2 . 
-. . . 2 2 5 5 5 5 5 2 . 2 . . . 
-. . c . . 5 5 d c c d d . . . . 
-. . . d d d d c c c . . d . . . 
-. . . . . . c c c c . . . c . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . d . f d d f f f . . . . . 
-. . . d 6 c 6 6 6 6 6 6 d . . . 
-. . . d 6 6 c 6 6 6 6 6 d . . . 
-. . . . . 6 6 . . 6 6 . d . . . 
-. . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . 
-. . . . 2 2 2 2 2 2 2 2 . . . . 
-. . . 5 5 5 5 5 2 5 2 2 2 . . . 
-. . . 2 2 d 2 2 d 2 2 2 2 . . . 
-. . 2 2 c d d 2 c d 2 2 2 2 . . 
-. . 2 2 6 d d d 6 d 2 2 2 2 . . 
-. 2 2 2 d d d d d d 2 2 2 . 2 . 
-. . . 2 2 5 5 5 5 5 2 . 2 . . . 
-. . . . . 5 5 5 5 d . . . . . . 
-. . . . . d c c c c d . . . . . 
-. . . . c d c c c d d . . . . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . . . f d d f f f . . . . . 
-. . . . . 6 6 6 6 6 6 . . . . . 
-. . . . . 6 6 c 6 6 6 . . . . . 
-. . . . d d d . d d d . . . . . 
-`],
-        200,
-        true
-        )
+function amberjump () {
+    if (amber.vy <= 0) {
+        amber.vy = -50
     }
 }
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -158,7 +62,7 @@ function amberidle () {
 . . . d d d . . . . d d d . . . 
 `, SpriteKind.Player)
     controller.moveSprite(amber, 85, 0)
-    amber.vy = 100
+    amber.ay = 100
 }
 function president2 () {
     presidentfinal = sprites.create(img`
@@ -264,6 +168,9 @@ function president2 () {
 . . . . . . . . . . . . . . . . . . . . . . . . . f c c f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f c c f . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.PresidentFinal)
 }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    amberjump()
+})
 function lilac2 () {
     lilac = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . 
@@ -436,6 +343,107 @@ function amberrunright () {
 . . . . . 6 6 6 6 6 6 . . . . . 
 . . . . . 6 6 6 c 6 6 . . . . . 
 . . . . . d d d . d d d . . . . 
+`],
+        200,
+        true
+        )
+    }
+}
+function amberstopright () {
+    if (amber.vx >= 0) {
+        animation.stopAnimation(animation.AnimationTypes.All, amber)
+        amber.setImage(img`
+. . . . . . . . . . . . . . . . 
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . 2 2 2 5 2 5 5 5 5 5 . . . 
+. . . 2 2 2 2 d 2 2 d 2 2 . . . 
+. . 2 2 2 2 d c 2 d d c 2 2 . . 
+. . 2 2 2 2 d 6 d d d 6 2 2 . . 
+. 2 . 2 2 2 d d d d d d 2 2 2 . 
+. . . 2 . 2 5 5 5 5 5 2 2 . . . 
+. . . . . d d 5 5 5 5 . . . . . 
+. . . . d . c c c c d . . . . . 
+. . . . c . c c c c . c . . . . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . . . f f f d d f . . . . . 
+. . . . 6 6 6 6 6 6 6 6 . . . . 
+. . . . 6 6 6 6 . 6 6 6 . . . . 
+. . . d d d . . . . d d d . . . 
+`)
+    }
+}
+function amberrunleft () {
+    if (amber.vx >= -80) {
+        animation.runImageAnimation(
+        amber,
+        [img`
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . 5 5 5 5 5 2 5 2 2 2 . . . 
+. . . 2 2 d 2 2 d 2 2 2 2 . . . 
+. . 2 2 c d d 2 c d 2 2 2 2 . . 
+. . 2 2 6 d d d 6 d 2 2 2 2 . . 
+. 2 2 2 d d d d d d 2 2 2 . 2 . 
+. . . 2 2 5 5 5 5 5 2 . 2 . . . 
+. . c . . 5 5 5 5 d d d . . . . 
+. . . d d d c c c c . . d . . . 
+. . . . . . c c c c . . . c . . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . d . f d d f f f . . . . . 
+. . . d 6 6 6 6 6 6 c 6 d . . . 
+. . . d 6 6 6 6 6 c 6 6 d . . . 
+. . . . . 6 6 . . 6 6 . d . . . 
+. . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . 
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . 5 5 5 5 5 2 5 2 2 2 . . . 
+. . . 2 2 d 2 2 d 2 2 2 2 . . . 
+. . 2 2 c d d 2 c d 2 2 2 2 . . 
+. . 2 2 6 d d d 6 d 2 2 2 2 . . 
+. 2 2 2 d d d d d d 2 2 2 . 2 . 
+. . . 2 2 5 5 5 5 5 2 . 2 . . . 
+. . . . . 5 5 5 5 d . . . . . . 
+. . . . . d c c c c d . . . . . 
+. . . . c d c c c d d . . . . . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . . . f d d f f f . . . . . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . . . 6 6 c 6 6 6 . . . . . 
+. . . . d d d . d d d . . . . . 
+`,img`
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . 5 5 5 5 5 2 5 2 2 2 . . . 
+. . . 2 2 d 2 2 d 2 2 2 2 . . . 
+. . 2 2 c d d 2 c d 2 2 2 2 . . 
+. . 2 2 6 d d d 6 d 2 2 2 2 . . 
+. 2 2 2 d d d d d d 2 2 2 . 2 . 
+. . . 2 2 5 5 5 5 5 2 . 2 . . . 
+. . c . . 5 5 d c c d d . . . . 
+. . . d d d d c c c . . d . . . 
+. . . . . . c c c c . . . c . . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . d . f d d f f f . . . . . 
+. . . d 6 c 6 6 6 6 6 6 d . . . 
+. . . d 6 6 c 6 6 6 6 6 d . . . 
+. . . . . 6 6 . . 6 6 . d . . . 
+. . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . 
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . 5 5 5 5 5 2 5 2 2 2 . . . 
+. . . 2 2 d 2 2 d 2 2 2 2 . . . 
+. . 2 2 c d d 2 c d 2 2 2 2 . . 
+. . 2 2 6 d d d 6 d 2 2 2 2 . . 
+. 2 2 2 d d d d d d 2 2 2 . 2 . 
+. . . 2 2 5 5 5 5 5 2 . 2 . . . 
+. . . . . 5 5 5 5 d . . . . . . 
+. . . . . d c c c c d . . . . . 
+. . . . c d c c c d d . . . . . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . . . f d d f f f . . . . . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . . . 6 6 c 6 6 6 . . . . . 
+. . . . d d d . d d d . . . . . 
 `],
         200,
         true
