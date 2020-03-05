@@ -152,15 +152,15 @@ f f f f f . . . . . . . . . . . f f f f f .
 `, SpriteKind.President)
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (controller.right.isPressed()) {
+    if (directionface == 0) {
         amberattackright()
     }
-    if (controller.left.isPressed()) {
+    if (directionface == 1) {
         amberattackleft()
     }
 })
 function amberattackleft () {
-    if (amber.vx >= 1) {
+    if (amber.vx >= -1) {
         projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -178,7 +178,7 @@ function amberattackleft () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, amber, -100, 0)
+`, amber, -120, 0)
         animation.runImageAnimation(
         projectile,
         [img`
@@ -372,6 +372,7 @@ function amberidle () {
 `, SpriteKind.Player)
     controller.moveSprite(amber, 65, 0)
     amber.ay = 250
+    directionface = 0
 }
 function president2 () {
     presidentfinal = sprites.create(img`
@@ -509,6 +510,7 @@ function lilac2 () {
 }
 function amberstopleft () {
     if (amber.vx <= 0) {
+        directionface = 1
         animation.stopAnimation(animation.AnimationTypes.All, amber)
         amber.setImage(img`
 . . . . . . . . . . . . . . . . 
@@ -607,6 +609,7 @@ function dahlia2 () {
 // the right
 function amberrunright () {
     if (amber.vx <= 1) {
+        directionface = 0
         animation.runImageAnimation(
         amber,
         [img`
@@ -875,9 +878,10 @@ function amberattackright () {
     }
 }
 // make's the player go back into idle sprite when
-// stoppingz
+// stopping
 function amberstopright () {
     if (amber.vx >= 0) {
+        directionface = 0
         animation.stopAnimation(animation.AnimationTypes.All, amber)
         amber.setImage(img`
 . . . . . . . . . . . . . . . . 
@@ -901,6 +905,7 @@ function amberstopright () {
 }
 function amberrunleft () {
     if (amber.vx >= -80) {
+        directionface = 1
         animation.runImageAnimation(
         amber,
         [img`
@@ -982,6 +987,7 @@ let damber: Sprite = null
 let lilac: Sprite = null
 let presidentfinal: Sprite = null
 let projectile: Sprite = null
+let directionface = 0
 let president: Sprite = null
 let amber: Sprite = null
 amberidle()
