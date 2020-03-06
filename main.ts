@@ -596,6 +596,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     amberrunright()
 })
 function amberportraits () {
+    // for dialogue
     list = [img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . f f f f f f f f . . . . . . . . . . . . . . . . . . . . . 
