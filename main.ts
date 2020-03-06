@@ -83,25 +83,110 @@ e e e e e e e e e e e e e e e e
 6 6 9 9 6 6 1 1 6 6 9 9 6 6 1 1 
 `
 }
-function enemy1 () {
-    enemie = sprites.create(img`
-. . . . . c c c f f . . . . . . 
-. . . . c c f f . . f . . . . . 
-. . . c c c c f f f . . . . . . 
-. . c c c c c c f . . f . . . . 
-. . 5 c c c 5 4 c c f . . . . . 
-. . 4 5 f 5 4 c c f . f . . . . 
-. . . c c c c 5 f . f . f . . . 
-. . . 5 4 5 4 c f f f f . f . . 
-. . . . c c f . b c f f f . . . 
-. . . . f . . b 1 b c f f . . . 
-. . . . . . . . b 1 c f . . . . 
-. . . . . . . . . c f . . . . . 
-. . . . . . . . . c f . . . . . 
-. . . . . . . c c f f f . . . . 
-. . . . . c c c c c c f f . . . 
-. . . c c c c f f f f f f f f . 
-`, SpriteKind.Enemy)
+function amberportraits () {
+    list = [img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . f f f f f f f f . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . f f f f c 2 2 2 2 2 2 c f f f . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f c 2 2 2 2 2 2 2 2 2 2 2 2 2 c f f . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . f f c 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 c f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . f c 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 f . . . . . . . . . . . . . . 
+. . . . . . . . . . . f c 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 5 4 f . . . . . . . . . . . . . 
+. . . . . . . . . . f c 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 5 5 5 4 f . . . . . . . . . . . . 
+. . . . . . . . . f c 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 5 5 5 5 5 5 5 5 5 5 4 f . . . . . . . . . . . 
+. . . . . . . . f c 2 2 4 5 5 4 5 5 4 5 5 5 4 5 5 5 5 5 5 5 5 c 5 4 4 c 2 2 f . . . . . . . . . . . 
+. . . . . . . f c c 2 2 2 2 5 4 5 5 4 5 5 5 4 5 5 5 5 4 4 4 4 f 2 2 2 2 f 2 c f . . . . . . . . . . 
+. . . . . . . f c 2 2 2 2 2 2 2 c 2 2 2 2 2 c 2 2 2 2 2 2 2 c f 2 c 2 2 f 2 2 f . . . . . . . . . . 
+. . . . . . f c 2 2 2 2 2 2 2 2 f 2 2 2 2 2 c c 2 2 2 2 2 2 f c 2 c c 2 2 f 2 c f . . . . . . . . . 
+. . . . . . f c 2 2 2 2 2 2 2 c f c 2 2 c c f c c 2 2 2 2 c f c 2 f c c c f 2 2 f . . . . . . . . . 
+. . . . . f c 2 2 2 2 2 2 2 2 f c c c c c f b f c 2 2 2 2 f c c 2 f f f c c f 2 c f . . . . . . . . 
+. . . . . f c 2 2 2 2 2 2 2 c f c c c f f b d f c c 2 2 c f c c c f c c f f f 2 2 f . . . . . . . . 
+. . . . f c c 2 2 2 2 2 2 2 f c c f f f b f f b f c 2 c f f f c c f c c 2 2 2 2 2 c f . . . . . . . 
+. . . . f c c c 2 2 2 2 2 2 f f f f b d f 9 9 f f c c c f 9 f f c f c 2 2 2 c 2 2 2 f . . . . . . . 
+. . . . f c c c 2 2 c 2 2 2 2 2 2 f d f 9 9 f 9 b f c f 9 f 9 f f c 2 2 2 2 c c 2 2 c f . . . . . . 
+. . . f c c c f 2 2 c 2 2 2 2 2 c f f 9 1 1 f 9 d f c f 9 f 9 9 f c 2 2 2 2 f c c 2 2 f . . . . . . 
+. . . f c c c f c 2 c c 2 2 2 2 f b f 1 1 1 6 1 d d f d 9 6 1 1 f c 2 2 2 2 f f c c c c f . . . . . 
+. . . f c c f c c c f c 2 2 2 2 f b f 1 1 1 7 1 d d d d 1 7 1 1 f c 2 2 2 2 f . f f c c f . . . . . 
+. . . f f f f c c c f c 2 2 2 2 f b d f f 1 1 d d d 4 4 d 1 1 f c c 2 2 2 2 f . . . f f f . . . . . 
+. . . . . f f c c c f c c 2 2 c f b d d d d d d d d d d 4 d d f c c 2 2 2 c f . . . . . . . . . . . 
+. . . . f 4 f c c f 4 f c c c f f c b d d d d d d d d d d d d b f c c 2 2 c f . . . . . . . . . . . 
+. . . f 4 4 f c f 4 4 f c c c f f f c b d d d c d d d d d d b f f c c c c c f . . . . . . . . . . . 
+. . . . f 4 4 f 4 f 4 f c c c f f 4 f c b d d d f f c d d b f . . f c c c f . . . . . . . . . . . . 
+. . . . . f 4 4 4 4 f f f c c f f 4 4 f f c b d d d d d b f . . . . f c c f . . . . . . . . . . . . 
+. . . . . . f f 4 4 4 4 f c f f 4 f 4 4 4 f f c b b b f f f . . . . . f c f . . . . . . . . . . . . 
+. . . . . . . . f f f f f c f f 4 4 f 4 5 5 4 f f f f 4 4 4 f . . . . . f f . . . . . . . . . . . . 
+. . . . . . f f 4 4 4 4 4 f f f 4 4 4 f f 4 5 5 4 f f f f 4 4 f . . . . . f . . . . . . . . . . . . 
+. . . . . f 4 4 4 4 f f f f f c f 4 4 4 4 f 4 5 5 5 5 5 5 4 4 f . . . . . . . . . . . . . . . . . . 
+. . . . f 4 4 4 4 f 4 4 f c b b c f 4 4 5 5 5 5 5 5 5 5 4 4 f f . . . . . . . . . . . . . . . . . . 
+. . . . . f f 4 4 4 4 f c b d d b c f f 4 5 5 5 5 5 5 5 5 5 4 f . . . . . . . . . . . . . . . . . . 
+. . . . . . . f f f f f b d d d d b f f f f 4 5 5 5 5 5 5 4 f f f . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f c b d d d d b f f f f f f 4 5 5 5 4 f f f c f . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f b d d d d d b c f f c f b f f f f f f f c f c f . . . . . . . . . . . . . . . 
+. . . . . . . . . . f b d d d d b c c f c c c f b b b b b f c c f c f . . . . . . . . . . . . . . . 
+. . . . . . . . . . f b d d d d b f c f c c c c f f f f f f c c c f f . . . . . . . . . . . . . . . 
+. . . . . . . . . f c d d d d b f c f c c c c c c c c c c c c c c f f . . . . . . . . . . . . . . . 
+. . . . . . . . . f b d d d d c f f f c c c c c c c c c c c c c c f c f . . . . . . . . . . . . . . 
+. . . . . . . . . f b d d d b f f f f c c c c c c c c c c c c c f c b f . . . . . . . . . . . . . . 
+. . . . . . . . . f d d d d f . f f f f c c c c c c c c c c c f c b d f . . . . . . . . . . . . . . 
+. . . . . . . . . f d d d b f . . f f f c c c c c c c c c c c f b d d f . . . . . . . . . . . . . . 
+. . . . . . . . f c d d d c f . . f f f f c c c c c c c c c f c b d d c f . . . . . . . . . . . . . 
+. . . . . . . . f b d d d f . . . . f f f f f c c c c c c c f c b d d d f . . . . . . . . . . . . . 
+. . . . . . . . f b d d b f . . . . f f f f c c c c c c c c c f c d d d f . . . . . . . . . . . . . 
+. . . . . . . . f b d d c f . . . f f f f f c c c c c c c c c f c b d d f . . . . . . . . . . . . . 
+. . . . . . . . f b b b f . . . . f f f f f f c c c c c c c c c f c b d c f . . . . . . . . . . . . 
+. . . . . . . . f c b c f . . . f f f f f f f f f c c c c c c f f f c b d f . . . . . . . . . . . . 
+`, img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`]
 }
 function level1 () {
     scene.cameraFollowSprite(amber)
@@ -415,6 +500,26 @@ function amberidle () {
     amber.ay = 250
     directionface = 0
     info.setLife(3)
+}
+function enemy1 () {
+    enemie = sprites.create(img`
+. . . . . c c c f f . . . . . . 
+. . . . c c f f . . f . . . . . 
+. . . c c c c f f f . . . . . . 
+. . c c c c c c f . . f . . . . 
+. . 5 c c c 5 4 c c f . . . . . 
+. . 4 5 f 5 4 c c f . f . . . . 
+. . . c c c c 5 f . f . f . . . 
+. . . 5 4 5 4 c f f f f . f . . 
+. . . . c c f . b c f f f . . . 
+. . . . f . . b 1 b c f f . . . 
+. . . . . . . . b 1 c f . . . . 
+. . . . . . . . . c f . . . . . 
+. . . . . . . . . c f . . . . . 
+. . . . . . . c c f f f . . . . 
+. . . . . c c c c c c f f . . . 
+. . . c c c c f f f f f f f f . 
+`, SpriteKind.Enemy)
 }
 function president2 () {
     presidentfinal = sprites.create(img`
@@ -1028,10 +1133,11 @@ let dahlia: Sprite = null
 let damber: Sprite = null
 let lilac: Sprite = null
 let presidentfinal: Sprite = null
+let enemie: Sprite = null
 let projectile: Sprite = null
 let directionface = 0
 let president: Sprite = null
 let amber: Sprite = null
-let enemie: Sprite = null
+let list: Image[] = []
 amberidle()
 level1()
