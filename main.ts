@@ -121,6 +121,8 @@ function level1 () {
         ))
     effects.clouds.startScreenEffect()
     scene.setBackgroundColor(9)
+    enemy1()
+    enemie.setPosition(190, 82)
 }
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     amber.setImage(img`
@@ -395,23 +397,24 @@ function amberidle () {
 }
 function enemy1 () {
     enemie = sprites.create(img`
-. . . . . c c c f f . . . . . . 
-. . . . c c f f . . f . . . . . 
-. . . c c c c f f f . . . . . . 
-. . c c c c c c f . . f . . . . 
-. . 5 c c c 5 4 c c f . . . . . 
-. . 4 5 f 5 4 c c f . f . . . . 
-. . . c c c c 5 f . f . f . . . 
-. . . 5 4 5 4 c f f f f . f . . 
-. . . . c c f . b c f f f . . . 
-. . . . f . . b 1 b c f f . . . 
-. . . . . . . . b 1 c f . . . . 
-. . . . . . . . . c f . . . . . 
-. . . . . . . . . c f . . . . . 
-. . . . . . . c c f f f . . . . 
-. . . . . c c c c c c f f . . . 
-. . . c c c c f f f f f f f f . 
+. . . . . . . . . . . . . . . . 
+. . . . . . f f f . . . . . . . 
+. . . . . f f f 1 f f f . . . . 
+. . . . . f 1 1 1 1 1 1 f . . . 
+. . . . . f 1 1 1 1 1 1 f . . . 
+. . f f . . f f 1 1 1 f f . . . 
+. . . f f f . . f f f . . . . . 
+. . . . . f f f . . . . . . . . 
+. . . . . . . f f . . . . . . . 
+. . . . . . . f . f f . . . . . 
+. . . . . . f f . . . f f f . . 
+. . . . . . f f . . . . . . . . 
+. . . . f f f f f . . . . . . . 
+. . f f f . . . f f . . . . . . 
+. f f . . . . . . f f . . . . . 
+. f . . . . . . . . f f . . . . 
 `, SpriteKind.Enemy)
+    enemie.ay = 250
 }
 function president2 () {
     presidentfinal = sprites.create(img`
@@ -1131,10 +1134,10 @@ let damber: Sprite = null
 let list: Image[] = []
 let lilac: Sprite = null
 let presidentfinal: Sprite = null
-let enemie: Sprite = null
 let projectile: Sprite = null
 let directionface = 0
 let president: Sprite = null
+let enemie: Sprite = null
 let amber: Sprite = null
 amberidle()
 level1()
