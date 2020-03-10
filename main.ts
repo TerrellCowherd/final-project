@@ -221,6 +221,118 @@ function planky1 () {
     planky_chr.setPosition(88, 104)
     plankycircumstance = 0
 }
+function bosslilacend () {
+    game.showLongText("", DialogLayout.Bottom)
+}
+function bosslilacdialogue () {
+    game.setDialogCursor(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . f f f f f f f f . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . f f f f c 2 2 2 2 2 2 c f f f . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . f f c 2 2 2 2 2 2 2 2 2 2 2 2 2 c f f . . . . . . . . . f . . . . . . 
+. . . . . . . . . . . . . f f c 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 c f . . . . . . . f 5 f . . . . . 
+. . . . . . . . . . . . f c 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 f . . . . . . f 5 f . . . . . 
+. . . . . . . . . . . f c 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 5 4 f . . . . . f 5 f . . . . . 
+. . . . . . . . . . f c 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 5 5 5 4 f . . . . f 5 f . . . . . 
+. . . . . . . . . f c 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 5 5 5 5 5 5 5 5 5 5 4 f . . . f 5 f . . . . . 
+. . . . . . . . f c 2 2 4 5 5 4 5 5 4 5 5 5 4 5 5 5 5 5 5 5 5 c 5 4 4 c 2 2 f . . . f 5 f . . . . . 
+. . . . . . . f c c 2 2 2 2 5 4 5 5 4 5 5 5 4 5 5 5 5 4 4 4 4 f 2 2 2 2 f 2 c f . . f 5 f . . . . . 
+. . . . . . . f c 2 2 2 2 2 2 2 c 2 2 2 2 2 c 2 2 2 2 2 2 2 c f 2 c 2 2 f 2 2 f . . c f c . . . . . 
+. . . . . . f c 2 2 2 2 2 2 2 2 f 2 2 2 2 2 c c 2 2 2 2 2 2 f c 2 c c 2 2 f 2 c f . f 5 f . . . . . 
+. . . . . . f c 2 2 2 2 2 2 2 c f c 2 2 c c f c c 2 2 2 2 c f c 2 f c c c f 2 2 f . . f . . . . . . 
+. . . . . f c 2 2 2 2 2 2 2 2 f c c c c c f b f c 2 2 2 2 f c c 2 f f f c c f 2 c f . . . . . . . . 
+. . . . . f c 2 2 2 2 2 2 2 c f c c c f f b d f c c 2 2 c f c c c f c c f f f 2 2 f . . . . . . . . 
+. . . . f c c 2 2 2 2 2 2 2 f c c f f f b f f b f c 2 c f f f c c f c c 2 2 2 2 2 c f . . . . . . . 
+. . . . f c c c 2 2 2 2 2 2 f f f f b d f 9 9 f f c c c f 9 f f c f c 2 2 2 c 2 2 2 f . . . . . . . 
+. . . . f c c c 2 2 c 2 2 2 2 2 2 f d f 9 f f 9 b f c f f f 9 f f c 2 2 2 2 c c 2 2 c f . . . . . . 
+. . . f c c c f 2 2 c 2 2 2 2 2 c f f 9 f 1 1 f d f c f f 1 f 9 f c 2 2 2 2 f c c 2 2 f . . . . . . 
+. . . f c c c f c 2 c c 2 2 2 2 f b f 1 f 1 1 f d d f d f 1 f 1 f c 2 2 2 2 f f c c c c f . . . . . 
+. . . f c c f c c c f c 2 2 2 2 f b f 1 1 f f 1 d d d d 1 f 1 1 f c 2 2 2 2 f . f f c c f . . . . . 
+. . . f f f f c c c f c 2 2 2 2 f b d f f 1 1 d d d 4 4 d 1 1 f c c 2 2 2 2 f . . . f f f . . . . . 
+. . . . . f f c c c f c c 2 2 c f b d d d d d d d d d d 4 d d f c c 2 2 2 c f . . . . . . . . . . . 
+. . . . f 4 f c c f 4 f c c c f f c b d d d d f f f f d d d d b f c c 2 2 c f . . . . . . . . . . . 
+. . . f 4 4 f c f 4 4 f c c c f f f c b d d f 3 3 2 2 f d d b f f c c c c c f . . . . . . . . . . . 
+. . . . f 4 4 f 4 f 4 f c c c f f 4 f c b d c 3 3 3 2 c d b f . . f c c c f . . . . . . . . . . . . 
+. . . . . f 4 4 4 4 f f f c c f f 4 4 f f c b 3 3 3 c d b f . . . . f c c f . . . . . . . . . . . . 
+. . . . . . f f 4 4 4 4 f c f f 4 f 4 4 4 f f c b b b f f f . . . . . f c f . . . . . . . . . . . . 
+. . . . . . . . f f f f f c f f 4 4 f 4 5 5 4 f f f f 4 4 4 f . . . . . f f . . . . . . . . . . . . 
+. . . . . . f f 4 4 4 4 4 f f f 4 4 4 f f 4 5 5 4 f f f f 4 4 f . . . . . f . . . . . . . . . . . . 
+. . . . . f 4 4 4 4 f f f f f c f 4 4 4 4 f 4 5 5 5 5 5 5 4 4 f . . . . . . . . . . . . . . . . . . 
+. . . . f 4 4 4 4 f 4 4 f c b b c f 4 4 5 5 5 5 5 5 5 5 4 4 f f . . . . . . . . . . . . . . . . . . 
+. . . . . f f 4 4 4 4 f c b d d b c f f 4 5 5 5 5 5 5 5 5 5 4 f . . . . . . . . . . . . . . . . . . 
+. . . . . . . f f f f f b d d d d b f f f f 4 5 5 5 5 5 5 4 f f f . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f c b d d d d b f f f f f f 4 5 5 5 4 f f f c f . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f b d d d d d b c f f c f b f f f f f f f c f c f . . . . . . . . . . . . . . . 
+. . . . . . . . . . f b d d d d b c c f c c c f b b b b b f c c f c f . . . . . . . . . . . . . . . 
+. . . . . . . . . . f b d d d d b f c f c c c c f f f f f f c c c f f . . . . . . . . . . . . . . . 
+. . . . . . . . . f c d d d d b f c f c c c c c c c c c c c c c c f f . . . . . . . . . . . . . . . 
+. . . . . . . . . f b d d d d c f f f c c c c c c c c c c c c c c f c f . . . . . . . . . . . . . . 
+`)
+    game.showLongText("Amber: Lilac? What are you doing here? And where is this?", DialogLayout.Bottom)
+    game.setDialogCursor(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . b b b b b b b b b b b b . . . . . . . . . . . . . . . . 
+. . . . . . . 2 2 2 . . . . . . . . b b b b b b b b b b b b b b b b b b b . . . . . . . . . . . . . 
+. . . . . . . 2 . . 2 . . . . b b b b b b b b b b b b b b b b b b b b b b b b . . . . . . . . . . . 
+. . . . . . . 2 . . 2 2 . b 2 2 2 b b b b b b b b b b b b b b b b b b b b b b b . . . . . . . . . . 
+. . . . . . . 2 . . 2 2 2 2 b b 2 b b b b b b b b b b b b b b b b b b b b b b b b . . . . . . . . . 
+. . . . . . . 2 2 2 2 b 2 b b b 2 b b b b b b b b b b b b b b b b b b b b b b b b b . . . . . . . . 
+. . . . . . . 2 2 2 2 2 b b b b 2 b b b b b b b b b b b b b b b b b b b b b b b b b . . . . . . . . 
+. . . . . . . 2 b 2 2 b 2 2 2 2 b b b b b b b b b b b b b b b b b b b b b b b b b b b . . . . . . . 
+. . . . . 2 2 b 2 2 2 2 b 2 b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b . . . . . . 
+. . . . . 2 . 2 b 2 2 b b b b b b b b b b b b b b b b b f f f f d d b b b b b b b b b b . . . . . . 
+. . . . 2 2 2 b 2 2 2 b b b b b b b b b b d d d d d d d d 2 d d d d b b b b b b b b b b b . . . . . 
+. . . . . . b b 2 2 b b b b d f f f f d d d d d d d d d d 2 d d d d b b b b b b b b b b b . . . . . 
+. . . . . . b b 2 2 b b b b d f f 2 d d d d d d d d d d d 2 d d d d b b b b b b b b b b b b . . . . 
+. . . . . b b b 2 b b b b b d d d 2 d d d d d d d d d d d d d d d d b b b b b b b b b b b b . . . . 
+. . . . . b b b b b b b b b d d d d d d d d d d d d d d d d d d d d b b b b b b b b b b b . . . . . 
+. . . . . b b b b b b b b b d d d d d d d f f f f f f f d d d d d d b b b b b b b b b . . . . . . . 
+. . . . . b b b b b b b b b d d d d d d d d d d d d d d d d d f f f b b b b b b b . . . . . . . . . 
+. . . . . b b b b b b b b b . d d d d d d d d d d d d f f d f 1 1 f b b b b . . . . . . . . . . . . 
+. . . . . b b b b b b b b b b . . d d d d d f f d d f 1 1 f f 1 1 1 b b b b b b b b b . . . . . . . 
+. . . . . b b b b b b b b b b . . . . d d f f f f f 1 1 1 f 1 1 1 1 b b b b b b b b b b . . . . . . 
+. . . . . . . . . . . . . . . . f f f f f f 1 f f 1 1 1 1 1 1 1 b b b b b b b b b b b b b . . . . . 
+. . . . . . . . . b b b b b b b f 1 1 f f 1 1 1 1 1 1 1 1 f f b b b b b b b b b b b b b b . . . . . 
+. . . . . . . . b b b b b b b b f f 1 1 1 1 1 1 2 f f f f b b b b b b b b b b b b b b b b . . . . . 
+. . . . . . . . b b b b b b b b b f f 1 1 2 2 2 f 2 2 2 2 2 b b b b b b b b b b b b b b b . . . . . 
+. . . . . . . b b b b b b b b b b b f 2 2 2 2 1 1 2 1 1 1 2 b b b b b b b b b b b b b b . . . . . . 
+. . . . . . . b b b b b b b b b b b 2 1 1 1 2 2 2 2 2 1 1 2 b b b b b b b b b b b b b . . . . . . . 
+. . . . . . . . b b b b b b b b b 2 1 1 1 1 1 2 2 b b 2 2 b b b b b b b b b b b b b b . . . . . . . 
+. . . . . . . . b b b b b b b b 2 2 2 2 2 2 2 b 2 b b b b b b b b b b b b b b b b . . . . . . . . . 
+. . . . . . . . . . f b b b b b b b b b b b 2 b b 2 b b b b b b b b . . . . . f f . . . . . . . . . 
+. . . . . . . . . f . . . . b b b b b b b 2 b b b 2 b b b b b b b b . . . . . . f . . . . . . . . . 
+. . . . . . . . f f . . . . b b b b b b 2 b b b b 2 b b b b b b b . . . . . . . f f . . . . . . . . 
+. . . . . . . . f . . . . . . 2 2 b b b 2 b b b b b 2 b b b b 2 . . . . . . . . . f f . . . . . . . 
+. . . . . . f f . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . f f . . . . . . 
+. . . . . . f . . . . . b b b 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . f . . . . . . 
+. . . . . f . . . . b b b b b b b b b 2 2 2 2 2 2 2 2 2 2 2 2 2 b b b . . . . . . . . . f f . . . . 
+. . . . f f . . . b b b b b b b b b b b b b b b b b b b b b b b b b b b b . . . . . . . . f . . . . 
+. . . . . . . . b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b . . . . . . . . . . . . 
+`)
+    game.showLongText("Lilac: This... is the Pseudo Future. A place of false hopes.", DialogLayout.Bottom)
+    game.showLongText("Lilac: Here, the souls of those with wasted lives mourn and weep at the regrets they've made when they still lived.", DialogLayout.Bottom)
+}
 function level1 () {
     scene.cameraFollowSprite(amber)
     tiles.setTilemap(tiles.createTilemap(
@@ -241,6 +353,10 @@ function level1 () {
     effects.clouds.startScreenEffect()
     scene.setBackgroundColor(9)
 }
+sprites.onOverlap(SpriteKind.Lilac, SpriteKind.Projectile, function (sprite, otherSprite) {
+    projectile.destroy()
+    info.player2.changeLifeBy(-1)
+})
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     amber.setImage(img`
 . . . . . . . . . . . . . . . . 
@@ -265,6 +381,58 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 function plankymessages () {
     if (amber.overlapsWith(planky_chr)) {
         if (plankycircumstance == 0) {
+            game.setDialogCursor(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . f f f . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . f f f f f f . . . . . . . . . . . . . f e e f f . . . . . . . . . . . . . . . . . . 
+. . . . . . . f e e e e e e f f f f f . . . . . . . f e e e e f . . . . . . . . . . . . . . . . . . 
+. . . . . . . f e f f f f e e e e e e f f f f f . . f e e e e f . . . . . . . . . . . . . . . . . . 
+. . . . . . f e f 1 1 1 1 f f f f f e e e e e e f f f f f e f . . . . . . . . . . . . . . . . . . . 
+. . . . . . f e f 1 1 1 1 1 1 1 1 1 f f f f f e e e e e e f f f f f . . . . . . . . . . . . . . . . 
+. . . . . . f e f 1 1 1 f 1 1 1 1 1 1 1 1 1 1 f f f f e e e e e e e f f f f f . . . . . . . . . . . 
+. . . . . . f e f 1 f f f f 1 1 1 1 1 1 1 1 1 1 1 1 1 f f f f e e e e e e e e f f f f f . . . . . . 
+. . . . . . f e f 1 1 1 1 f f 1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f f f f e e e e e e e e e f f f . . . 
+. . . . . . f f 1 1 1 1 1 f f f f 1 1 1 1 1 1 1 f 1 1 1 1 1 1 1 1 1 1 f f f f e e e e e e e e f . . 
+. . . . . . f f 1 1 1 1 1 1 1 1 1 f f f 1 1 1 f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f f f f e e e e f . . 
+. . . . . f e f 1 1 1 1 1 1 1 1 1 1 1 f 1 f f 1 f 1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f f e e f . . 
+. . . . . f e f 1 1 1 1 1 1 1 1 1 1 1 1 f 1 1 1 f f f f 1 f f 1 1 1 f 1 1 1 1 1 1 f 1 1 1 f e f . . 
+. . . . . f e f 1 1 f f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f f 1 f 1 1 f f f 1 1 1 1 1 f 1 1 1 f e f . . 
+. . . . . f f 1 1 1 f f f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f f f 1 1 f f 1 1 f f 1 f 1 1 f e f . . 
+. . . . . f f 1 1 1 1 1 1 f f f f f f f 1 1 1 1 1 1 f 1 1 1 f f 1 1 1 f f f f 1 1 1 f 1 f e e f . . 
+. . . . . f f 1 1 1 1 1 1 1 1 f f f f f 1 1 1 1 1 f f 1 1 1 1 1 1 1 1 1 1 1 f 1 1 1 f 1 f e f . . . 
+. . . . . f f 1 1 1 1 1 1 1 1 1 1 1 1 f f f f f f 1 f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f 1 f e f . . . 
+. . . . f e f 1 1 1 1 1 1 1 1 1 1 1 1 f f 1 1 f 1 1 f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f e e f . . . 
+. . . . f f 1 1 1 1 f 1 1 1 1 1 1 1 1 1 f 1 1 1 1 1 f f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f e e f . . . 
+. . . . f f 1 1 1 f f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f 1 f f f f f f f f 1 1 1 1 1 1 f e e f . . . 
+. . . . f f 1 f f f 1 f 1 f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f f 1 f 1 1 f f f f 1 1 1 f e e f . . . . 
+. . . . f f 1 1 1 1 1 1 f f f f 1 f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f f 1 1 f e e f . . . . 
+. . . . f 1 1 1 1 1 1 1 1 1 1 1 f f f f f f f 1 f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f e e f . . . . 
+. . . f 1 1 1 1 1 1 1 1 1 1 1 1 f 1 1 1 f f f f f f f f f f 1 1 1 1 1 1 1 1 1 1 1 f e e e f . . . . 
+. . . . f f f f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f 1 f f 1 1 1 1 1 f f 1 1 1 1 f e e e f . . . . 
+. . . . . . . . . f f f f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f f f f f f f f f 1 1 1 f e e e f . . . . 
+. . . . . . . . . . . . . . f f f f f 1 1 1 1 1 1 1 1 1 1 1 f f 1 1 1 1 1 1 1 1 f e e e f . . . . . 
+. . . . . . . . . . . . . . . . . . . f f f f f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f e e e f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . f e e f f f f f 1 1 1 1 1 1 1 1 1 1 1 f e e e f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . f e e e f . . . f f f 1 1 1 1 1 1 1 f e e e e f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . f e e e f . . . . . . f f f f 1 1 1 f e e e e f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . f e e e f . . . . . . . . . . f f f f f f f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . f e e e e f . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . f e e e f . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . f e e e f . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . f e e e f . . . . . . . . . . . . . . . . . . . . . . . . . 
+`)
             game.showLongText("Hello, Amber. My name is Planky. Welcome to the test area. Here, you will be able to learn all the moves available in this game.", DialogLayout.Bottom)
             game.showLongText("I designed this place my self to allow you to   understand how this works without any long button layout images.", DialogLayout.Bottom)
         } else {
@@ -520,7 +688,7 @@ function amberidle () {
     controller.moveSprite(amber, 65, 0)
     amber.ay = 250
     directionface = 0
-    info.setLife(3)
+    info.setLife(5)
 }
 function president2 () {
     presidentfinal = sprites.create(img`
@@ -656,16 +824,11 @@ function lilac2 () {
 . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Lilac)
     lilacbehavior()
+    info.player2.setLife(50)
 }
 function lilacbehavior () {
-    animation.runMovementAnimation(
-    lilac,
-    animation.animationPresets(animation.bobbing),
-    2000,
-    true
-    )
-    lilac.setFlag(SpriteFlag.StayInScreen, true)
-    lilac.ax = 10
+    lilac.vx = 50
+    lilac.setFlag(SpriteFlag.BounceOnWall, true)
 }
 function amberstopleft () {
     if (amber.vx <= 0) {
@@ -1300,6 +1463,7 @@ function bosslilac () {
     bosslilaccalled = 1
     game.splash("Level 1: Pseudo Future")
     planky_chr.destroy()
+    amber.setPosition(23, 109)
     effects.clouds.endScreenEffect()
     tiles.setTilemap(tiles.createTilemap(
             hex`0a000900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000909090909090909090908080808080808080808`,
@@ -1439,9 +1603,9 @@ f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 `)
-    amber.setPosition(23, 109)
+    bosslilacdialogue()
     lilac2()
-    lilac.setPosition(136, 67)
+    lilac.setPosition(140, 80)
 }
 let projectile4: Sprite = null
 let projectile3: Sprite = null
@@ -1452,16 +1616,16 @@ let damber: Sprite = null
 let list: Image[] = []
 let lilac: Sprite = null
 let presidentfinal: Sprite = null
-let projectile: Sprite = null
 let directionface = 0
 let president: Sprite = null
+let projectile: Sprite = null
 let amber: Sprite = null
 let plankycircumstance = 0
 let planky_chr: Sprite = null
 planky1()
 amberidle()
 level1()
-game.onUpdateInterval(2000, function () {
+game.onUpdateInterval(1500, function () {
     if (bosslilaccalled == 1) {
         projectile2 = sprites.createProjectileFromSprite(img`
 . . b b c b b . . 
@@ -1499,5 +1663,13 @@ b d d 1 1 d 1 d b
         projectile2.setKind(SpriteKind.LilacProjectile)
         projectile3.setKind(SpriteKind.LilacProjectile)
         projectile4.setKind(SpriteKind.LilacProjectile)
+    }
+})
+forever(function () {
+    if (info.player2.life() == 0) {
+        if (bosslilaccalled == 1) {
+            bosslilaccalled = 0
+            bosslilacend()
+        }
     }
 })
