@@ -182,37 +182,6 @@ function planky1 () {
     planky_chr.setPosition(88, 104)
     plankycircumstance = 0
 }
-function plankymessages () {
-    if (amber.overlapsWith(planky_chr)) {
-        if (plankycircumstance == 0) {
-            game.showLongText("Hello, Amber. My name is Planky. Welcome to the test area. Here, you will be able to learn all the moves available in this game.", DialogLayout.Bottom)
-            game.showLongText("I designed this place my self to allow you to   understand how this works without any long button layout images.", DialogLayout.Bottom)
-        } else {
-            game.showLongText("Pain.", DialogLayout.Bottom)
-        }
-    }
-}
-function plankydie () {
-    plankycircumstance = 1
-    planky_chr.setImage(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . e . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . e . e . . . . . . . . . . . . . . . . . . . 
-. . . . . . . e e e . . . . . . . . . . . . . . . . . . 
-. . . . . . . . e e e . . . . . . . . . . . . . . . . . 
-. . . . . . . . . e e . . . . . . . . e . . . . . . . . 
-. . . . . . . . e e e . . . . . . e . e . . . . . . . . 
-. . . . . . . e e e . . e e e e e e e e e e e e e e e . 
-. . . . . . e e e e e . e e e e e e e e e e e e e e e . 
-`)
-}
 function level1 () {
     scene.cameraFollowSprite(amber)
     tiles.setTilemap(tiles.createTilemap(
@@ -254,6 +223,16 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 `)
     amberrunleft()
 })
+function plankymessages () {
+    if (amber.overlapsWith(planky_chr)) {
+        if (plankycircumstance == 0) {
+            game.showLongText("Hello, Amber. My name is Planky. Welcome to the test area. Here, you will be able to learn all the moves available in this game.", DialogLayout.Bottom)
+            game.showLongText("I designed this place my self to allow you to   understand how this works without any long button layout images.", DialogLayout.Bottom)
+        } else {
+            game.showLongText("Pain.", DialogLayout.Bottom)
+        }
+    }
+}
 function president1 () {
     president = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . 
@@ -1135,6 +1114,27 @@ function amberattackright () {
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     plankymessages()
 })
+function plankydie () {
+    plankycircumstance = 1
+    planky_chr.setImage(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . e . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . e . e . . . . . . . . . . . . . . . . . . . 
+. . . . . . . e e e . . . . . . . . . . . . . . . . . . 
+. . . . . . . . e e e . . . . . . . . . . . . . . . . . 
+. . . . . . . . . e e . . . . . . . . e . . . . . . . . 
+. . . . . . . . e e e . . . . . . e . e . . . . . . . . 
+. . . . . . . e e e . . e e e e e e e e e e e e e e e . 
+. . . . . . e e e e e . e e e e e e e e e e e e e e e . 
+`)
+}
 // make's the player go back into idle sprite when
 // stopping
 function amberstopright () {
