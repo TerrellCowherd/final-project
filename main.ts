@@ -12,6 +12,63 @@ namespace SpriteKind {
 }
 namespace myTiles {
     //% blockIdentity=images._tile
+    export const tile0 = img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`
+    //% blockIdentity=images._tile
+    export const tile1 = img`
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 7 7 7 6 6 7 7 7 7 7 7 5 5 
+5 6 7 6 c 6 c c 6 7 c 6 c 6 7 7 
+7 c 6 c e c e e c 6 c c e c 6 7 
+6 c c e e e e e e c e e e e c 6 
+c e e e e e e d e e e e e e e c 
+e e e e e e e f e e e e e e e e 
+e e d e e e e e e e e e d e e e 
+e e f e e e e e e e e e f e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e d e e e e e e e e e e 
+e e e e e f e e e e e e e e e e 
+e e e e e e e e e e d e e e e e 
+e e e e e e e e e e f e e e e e 
+e e e e e e e e e e e e e e e e 
+`
+    //% blockIdentity=images._tile
+    export const tile3 = img`
+e e e e d e e e e e e e e e e e 
+e e e e f e e e e e e e e d e e 
+e e e e e e e e e e e e e f e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e d e e e e e e e e 
+e e e e e e e f e e e e e e e e 
+e e d e e e e e e e e e d e e e 
+e e f e e e e e e e e e f e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e d e e e e e e e e e e 
+e e e e e f e e e e e e e e e e 
+e e e e e e e e e e d e e e e e 
+e e e e e e e e e e f e e e e e 
+e e e e e e e e e e e e e e e e 
+`
+    //% blockIdentity=images._tile
     export const tile5 = img`
 c c c c c c c c c c c c c c c c 
 c c c c c c c c c c c c c c c c 
@@ -316,63 +373,6 @@ f f f f f f f f f f f f f f f f
 . . . . . . . . . . . . . . . . 
 `
     //% blockIdentity=images._tile
-    export const tile0 = img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 7 7 7 6 6 7 7 7 7 7 7 5 5 
-5 6 7 6 c 6 c c 6 7 c 6 c 6 7 7 
-7 c 6 c e c e e c 6 c c e c 6 7 
-6 c c e e e e e e c e e e e c 6 
-c e e e e e e d e e e e e e e c 
-e e e e e e e f e e e e e e e e 
-e e d e e e e e e e e e d e e e 
-e e f e e e e e e e e e f e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e d e e e e e e e e e e 
-e e e e e f e e e e e e e e e e 
-e e e e e e e e e e d e e e e e 
-e e e e e e e e e e f e e e e e 
-e e e e e e e e e e e e e e e e 
-`
-    //% blockIdentity=images._tile
-    export const tile3 = img`
-e e e e d e e e e e e e e e e e 
-e e e e f e e e e e e e e d e e 
-e e e e e e e e e e e e e f e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e d e e e e e e e e 
-e e e e e e e f e e e e e e e e 
-e e d e e e e e e e e e d e e e 
-e e f e e e e e e e e e f e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e d e e e e e e e e e e 
-e e e e e f e e e e e e e e e e 
-e e e e e e e e e e d e e e e e 
-e e e e e e e e e e f e e e e e 
-e e e e e e e e e e e e e e e e 
-`
-    //% blockIdentity=images._tile
     export const tile23 = img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
@@ -575,31 +575,6 @@ function planky1 () {
 `, SpriteKind.Planky)
     planky_chr.setPosition(88, 104)
     plankycircumstance = 0
-}
-function lookoutforthatcar () {
-    car = sprites.createProjectileFromSide(img`
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . c c c c c c c c c c . . . . . . 
-. . . . . . . . 5 4 c c c 4 5 5 c c c 4 5 . . . . 
-. . . . . . . 5 5 5 4 c 4 5 5 5 c c c 4 5 5 . . . 
-. . . . . . . 5 5 5 4 f 4 5 5 5 f f f f 4 5 . . . 
-. . . . c c c c c c c f c c c c f f c c c c . . . 
-. . . f 5 f 4 c c 5 4 c f c c 5 4 c f c c c . . . 
-. . f 5 f c c c c c c c f c c c c c f c c c . . . 
-. . c c c c c f f c c f c c c c c c f f c c . . . 
-. . . c c c f f f f c f c c c c c f f f f c . . . 
-. . . . . . f f f f . . . . . . . f f f f . . . . 
-. . . . . . . f f . . . . . . . . . f f . . . . . 
-`, -100, 0)
-    car.setKind(SpriteKind.Car)
 }
 function level1 () {
     scene.cameraFollowSprite(amber)
@@ -1105,28 +1080,29 @@ f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 `)
     lilac.destroy()
     tiles.setTilemap(tiles.createTilemap(
-            hex`3200100000000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f110f110f1100000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f0f0f0f0f0f00000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f110f110f1100000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f0f0f0f0f0f00000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f110f110f1100000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f0f0f0f0f0f00000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f110f110f1100000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f0f0f0f0f0f00000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f110f110f1100000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f0f0f0f0f0f00000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f110f110f1100000000000000000000000000000b0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000100f0f0f0f0f0f00000000000000000000000000000c0c0c0c0c0c0000000c0c0c0c0c0c0000000000000000000000000000000f110f110f1100000000000000000000000000000c0c0d0e0c0c0000000c0c0d0e0c0c0000000000000000000000000000120f0f0f0f0f0f09090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a`,
+            hex`3200100000000000000000000000000000000a0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f110f110f1100000000000000000000000000000a0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f0f0f0f0f0f00000000000000000000000000000a0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f110f110f1100000000000000000000000000000a0b0b0b0b0b0000000b0b0b0b0b0b0000000000000000000000000000000f0f0f0f0f0f00000000000000000000000000000a0b0b0b0b0b0000000b0b0b0b0b090909090000000000000000000000000f110f110f1100000000000000000000000000000a0b0b0b0b0b0000000b0b090b0b0a0a0a0a0000000000000000000000000f0f0f0f0f0f00000000000000000000000000000a0b0b0b0b0b0000090b0b0b0b0b0a0a0a0a0000000000000000000000000f110f110f1100000000000000000000000000000a0b0b0b0b090000000b0b0b0b0b0a0a0a0a0000000000000000000000000f0f0f0f0f0f00000000000000000000000000000a0b0b09090a09090909090909090a0a0a0a0000000000000000000000000f110f110f1100000000000000000000000000000a090b0b0b0b0000000b0b0b0b0b0b000a0a0000000000000000000000000f0f0f0f0f0f00000000000000000000000000000a0a090b0b0b0000000b0b0b0b0b0b000a0a0000000000000000000000000f110f110f1100000000000000000000000000000a0a0a0909090009090b0909090b0b000a0a0000000000000000000000100f0f0f0f0f0f00000000000000000000000000000c0c0c0c0c0c0000000c0c0c0c0c09090a0a0000000000000000000000000f110f110f11000000000000090909090900000009090909090909090909090909090a0a0a0a0000000000000000000000120f0f0f0f0f0f0909090909090a0a0a0a0a0909090a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0909090909090909090909090909090909090a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a`,
             img`
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 . 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
+. . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 . 
+. . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
+. . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
+. . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
+. . . . . . . . . . . . . . 2 . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . 2 2 2 2 2 2 
+. . . . . . . . . . . . . . 2 . . . . . . . . . . 2 . . 2 2 2 2 . . . . . . . . . . . . 2 2 2 2 2 2 
+. . . . . . . . . . . . . . 2 . . . . . . . 2 . . . . . 2 2 2 2 . . . . . . . . . . . . 2 2 2 2 2 2 
+. . . . . . . . . . . . . . 2 . . . . 2 . . . . . . . . 2 2 2 2 . . . . . . . . . . . . 2 2 2 2 2 2 
+. . . . . . . . . . . . . . 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . 2 2 2 2 2 2 
+. . . . . . . . . . . . . . 2 2 . . . . . . . . . . . . . . 2 2 . . . . . . . . . . . . 2 2 2 2 2 2 
+. . . . . . . . . . . . . . 2 2 2 . . . . . . . . . . . . . 2 2 . . . . . . . . . . . . 2 2 2 2 2 2 
+. . . . . . . . . . . . . . 2 2 2 2 2 2 . 2 2 . 2 2 2 . . . 2 2 . . . . . . . . . . . 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . 2 . 2 2 2 2 
+. . . . . . 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 `,
             [myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22,myTiles.tile23],
             TileScale.Sixteen
         ))
+    game.splash("Level 2: Blackwell Business")
     amber.setPosition(11, 103)
     info.setLife(5)
 }
@@ -1955,9 +1931,6 @@ function amberrunright () {
         )
     }
 }
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Car, function (sprite, otherSprite) {
-    car.destroy(effects.disintegrate, 500)
-})
 function amberattackright () {
     if (amber.vx <= 1) {
         projectile = sprites.createProjectileFromSprite(img`
@@ -2459,7 +2432,6 @@ let directionface = 0
 let president: Sprite = null
 let projectile: Sprite = null
 let amber: Sprite = null
-let car: Sprite = null
 let plankycircumstance = 0
 let planky_chr: Sprite = null
 game.splash("Level 1: Pseudo Future")
@@ -2508,7 +2480,7 @@ b d d 1 1 d 1 d b
 })
 game.onUpdateInterval(5000, function () {
     if (level2real == 1) {
-        lookoutforthatcar()
+    	
     }
 })
 forever(function () {
