@@ -12,63 +12,6 @@ namespace SpriteKind {
 }
 namespace myTiles {
     //% blockIdentity=images._tile
-    export const tile0 = img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 7 7 7 6 6 7 7 7 7 7 7 5 5 
-5 6 7 6 c 6 c c 6 7 c 6 c 6 7 7 
-7 c 6 c e c e e c 6 c c e c 6 7 
-6 c c e e e e e e c e e e e c 6 
-c e e e e e e d e e e e e e e c 
-e e e e e e e f e e e e e e e e 
-e e d e e e e e e e e e d e e e 
-e e f e e e e e e e e e f e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e d e e e e e e e e e e 
-e e e e e f e e e e e e e e e e 
-e e e e e e e e e e d e e e e e 
-e e e e e e e e e e f e e e e e 
-e e e e e e e e e e e e e e e e 
-`
-    //% blockIdentity=images._tile
-    export const tile3 = img`
-e e e e d e e e e e e e e e e e 
-e e e e f e e e e e e e e d e e 
-e e e e e e e e e e e e e f e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e d e e e e e e e e 
-e e e e e e e f e e e e e e e e 
-e e d e e e e e e e e e d e e e 
-e e f e e e e e e e e e f e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e d e e e e e e e e e e 
-e e e e e f e e e e e e e e e e 
-e e e e e e e e e e d e e e e e 
-e e e e e e e e e e f e e e e e 
-e e e e e e e e e e e e e e e e 
-`
-    //% blockIdentity=images._tile
     export const tile5 = img`
 c c c c c c c c c c c c c c c c 
 c c c c c c c c c c c c c c c c 
@@ -372,6 +315,82 @@ f f f f f f f f f f f f f f f f
 . . . . . . . . . 2 . . . . . . 
 . . . . . . . . . . . . . . . . 
 `
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`
+    //% blockIdentity=images._tile
+    export const tile1 = img`
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 7 7 7 6 6 7 7 7 7 7 7 5 5 
+5 6 7 6 c 6 c c 6 7 c 6 c 6 7 7 
+7 c 6 c e c e e c 6 c c e c 6 7 
+6 c c e e e e e e c e e e e c 6 
+c e e e e e e d e e e e e e e c 
+e e e e e e e f e e e e e e e e 
+e e d e e e e e e e e e d e e e 
+e e f e e e e e e e e e f e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e d e e e e e e e e e e 
+e e e e e f e e e e e e e e e e 
+e e e e e e e e e e d e e e e e 
+e e e e e e e e e e f e e e e e 
+e e e e e e e e e e e e e e e e 
+`
+    //% blockIdentity=images._tile
+    export const tile3 = img`
+e e e e d e e e e e e e e e e e 
+e e e e f e e e e e e e e d e e 
+e e e e e e e e e e e e e f e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e d e e e e e e e e 
+e e e e e e e f e e e e e e e e 
+e e d e e e e e e e e e d e e e 
+e e f e e e e e e e e e f e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e d e e e e e e e e e e 
+e e e e e f e e e e e e e e e e 
+e e e e e e e e e e d e e e e e 
+e e e e e e e e e e f e e e e e 
+e e e e e e e e e e e e e e e e 
+`
+    //% blockIdentity=images._tile
+    export const tile23 = img`
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+d d d d d d d d d d d d d d d d 
+d d d d d d d d d d d d d d d d 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+`
 }
 function bosslilacend () {
     game.setDialogCursor(img`
@@ -596,7 +615,7 @@ function level1 () {
 . . . . . . . . 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22,myTiles.tile23],
             TileScale.Sixteen
         ))
     effects.clouds.startScreenEffect()
@@ -689,6 +708,9 @@ function plankymessages () {
         }
     }
 }
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile22, function (sprite, location) {
+    bossdahlia()
+})
 function president1 () {
     president = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . 
@@ -714,6 +736,24 @@ f . f f f . . . . . . . . . . . f f f . f .
 f f f f f . . . . . . . . . . . f f f f f . 
 . f f f f . . . . . . . . . . . f f f f . . 
 `, SpriteKind.President)
+}
+function bossdahlia () {
+    tiles.setTilemap(tiles.createTilemap(
+            hex`0a000900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001313131313131313131313131313131313131313`,
+            img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 
+`,
+            [myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22,myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile23],
+            TileScale.Sixteen
+        ))
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (directionface == 0) {
@@ -1084,7 +1124,7 @@ f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22,myTiles.tile23],
             TileScale.Sixteen
         ))
     amber.setPosition(11, 103)
@@ -1593,7 +1633,7 @@ scene.onHitWall(SpriteKind.Projectile, function (sprite) {
 . . . . . . . . 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22,myTiles.tile23],
             TileScale.Sixteen
         ))
     }
@@ -2216,7 +2256,7 @@ function bosslilac () {
 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22,myTiles.tile23],
             TileScale.Sixteen
         ))
     scene.setBackgroundImage(img`
