@@ -8,6 +8,7 @@ namespace SpriteKind {
     export const LilacProjectile = SpriteKind.create()
     export const LilacProjectile2 = SpriteKind.create()
     export const LilacProjectile3 = SpriteKind.create()
+    export const Car = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -556,6 +557,31 @@ function planky1 () {
     planky_chr.setPosition(88, 104)
     plankycircumstance = 0
 }
+function lookoutforthatcar () {
+    car = sprites.createProjectileFromSide(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . c c c c c c c c c c . . . . . . 
+. . . . . . . . 5 4 c c c 4 5 5 c c c 4 5 . . . . 
+. . . . . . . 5 5 5 4 c 4 5 5 5 c c c 4 5 5 . . . 
+. . . . . . . 5 5 5 4 f 4 5 5 5 f f f f 4 5 . . . 
+. . . . c c c c c c c f c c c c f f c c c c . . . 
+. . . f 5 f 4 c c 5 4 c f c c 5 4 c f c c c . . . 
+. . f 5 f c c c c c c c f c c c c c f c c c . . . 
+. . c c c c c f f c c f c c c c c c f f c c . . . 
+. . . c c c f f f f c f c c c c c f f f f c . . . 
+. . . . . . f f f f . . . . . . . f f f f . . . . 
+. . . . . . . f f . . . . . . . . . f f . . . . . 
+`, -100, 0)
+    car.setKind(SpriteKind.Car)
+}
 function level1 () {
     scene.cameraFollowSprite(amber)
     tiles.setTilemap(tiles.createTilemap(
@@ -914,6 +940,7 @@ function amberidle () {
     info.setLife(5)
 }
 function level2 () {
+    level2real = 1
     scene.setBackgroundImage(img`
 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
@@ -1834,6 +1861,9 @@ function amberrunright () {
         )
     }
 }
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Car, function (sprite, otherSprite) {
+    car.destroy(effects.disintegrate, 500)
+})
 function amberattackright () {
     if (amber.vx <= 1) {
         projectile = sprites.createProjectileFromSprite(img`
@@ -2161,6 +2191,12 @@ function amberrunleft () {
         )
     }
 }
+info.onLifeZero(function () {
+    game.over(false)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Car, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+})
 function bosslilac () {
     game.splash("Level END")
     bosslilaccalled = 1
@@ -2322,10 +2358,12 @@ let list: Image[] = []
 let presidentfinal: Sprite = null
 let projectile4: Sprite = null
 let lilac: Sprite = null
+let level2real = 0
 let directionface = 0
 let president: Sprite = null
 let projectile: Sprite = null
 let amber: Sprite = null
+let car: Sprite = null
 let plankycircumstance = 0
 let planky_chr: Sprite = null
 game.splash("Level 1: Pseudo Future")
@@ -2370,6 +2408,11 @@ b d d 1 1 d 1 d b
         projectile2.setKind(SpriteKind.LilacProjectile)
         projectile3.setKind(SpriteKind.LilacProjectile2)
         projectile4.setKind(SpriteKind.LilacProjectile3)
+    }
+})
+game.onUpdateInterval(5000, function () {
+    if (level2real == 1) {
+        lookoutforthatcar()
     }
 })
 forever(function () {
