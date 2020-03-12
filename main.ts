@@ -9,6 +9,7 @@ namespace SpriteKind {
     export const LilacProjectile2 = SpriteKind.create()
     export const LilacProjectile3 = SpriteKind.create()
     export const Car = SpriteKind.create()
+    export const Rock = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -576,6 +577,51 @@ function planky1 () {
     planky_chr.setPosition(88, 104)
     plankycircumstance = 0
 }
+function rockgettingpunched () {
+    projectile5 = sprites.createProjectileFromSprite(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . e d d . . . . . . . . 
+. . . . e e d d d d . . . . . . 
+. . . . c e e d d d d . . . . . 
+. . . . f c e e e e e . . . . . 
+. . . . f f c c e e c . . . . . 
+. . . . . f f c c c f . . . . . 
+. . . . . . f f f f . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, rockles, 50, 100)
+}
+function rock () {
+    rockles = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . e d d d d . . . . . . . 
+. . . e d d d d d d . . . . . . 
+. . . e e d d d d d d d . . . . 
+. . c e e e e d d d d d d . . . 
+. . f f c e e e e d d d e . . . 
+. . c d f f f c e e e e c f . . 
+. e e d d d c f f c c f f f . . 
+. c e e d d d d c f f f f f . . 
+. f c e e e e e e f f f f f . . 
+. f f c e e e e c f f f f f . . 
+. . f f f c c c f f f f f . . . 
+. . . f f f f f f f f . . . . . 
+. . . . f f f f f . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Rock)
+    rockles.setPosition(132, 0)
+    rockles.vy = 50
+}
+function dahliabehavior () {
+	
+}
 function level1 () {
     scene.cameraFollowSprite(amber)
     tiles.setTilemap(tiles.createTilemap(
@@ -729,6 +775,7 @@ function bossdahlia () {
             [myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22,myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile23],
             TileScale.Sixteen
         ))
+    dahlia2()
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (directionface == 0) {
@@ -1124,6 +1171,161 @@ f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
     amber.setPosition(11, 103)
     info.setLife(5)
 }
+sprites.onOverlap(SpriteKind.Dahlia, SpriteKind.Rock, function (sprite, otherSprite) {
+    animation.runImageAnimation(
+    dahlia,
+    [img`
+. . . . . . . . 5 5 . . . . . . . . . . 
+. . . . . . 5 5 5 5 5 5 . . . . . . . . 
+. . . . . 5 5 5 5 5 5 5 . . . . . . . . 
+. . . . . . 5 5 5 5 5 5 5 . . . . . . . 
+. . . . . . 5 5 5 5 5 5 5 f . . . . . . 
+. . . . . . 5 5 5 5 5 5 5 5 f . . . . . 
+. . . . . . f 5 f 5 5 5 5 5 5 . . . . . 
+. . . . . f f f f 5 5 5 5 5 5 5 . . . . 
+. . . . . f f d 5 5 5 c 5 5 5 5 5 . . . 
+. . . . . f f d d 5 c c f f 5 5 5 . . . 
+. . . . . f f . f 1 c c f f f 5 5 5 . . 
+. . . . . . . f 1 b c c c . . . . 5 5 . 
+. . . . 5 5 5 c b c c c c . . . . . . 5 
+. . . 5 5 f f c b c c c c . . . . . . . 
+. . . 5 5 f f c f c c f f . . . . . . . 
+. . . 5 5 f f f f f f f f f . . . . . . 
+. . . . . . f f f f f f f f . . . . . . 
+. . . . . . b b . . . b b b . . . . . . 
+. . . . . f f . . . . . f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . 5 5 . . . . . . . . . . 
+. . . . . . 5 5 f f 5 5 . . . . . . . . 
+. . . . . 5 f f f f f 5 . . . . . . . . 
+. . . . . . 5 f f 5 5 5 . . . . . . . . 
+. . . . . . f f 5 5 5 5 f f . . . . . . 
+. . . . . . 5 5 5 f f 5 f f f . . . . . 
+. . . . . . f 5 f f 5 5 f f f . . . . . 
+. . . . . f f f f 5 5 5 f f f f . . . . 
+. . . . . f f d 5 5 5 c f f f f . . . . 
+. . . . . f f d d 5 c c f f f f . . . . 
+. . . . . f f . f 1 c c f f f . . . . . 
+. . . . . . . f 1 b c c c . . . . . . . 
+. . . . 5 5 5 c b c c c c . . . . . . . 
+. . . 5 5 f f c b c c c c . . . . . . . 
+. . . 5 5 f f c f c c f f . . . . . . . 
+. . . 5 5 f f f f f f f f f . . . . . . 
+. . . . . . f f f f f f f f . . . . . . 
+. . . . . . b b . . . b b b . . . . . . 
+. . . . . f f . . . . . f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . 5 5 . . . . . . . . . . 
+. . . . . . 5 5 f f 5 5 . . . . . . . . 
+. . . . . 5 f f f f f 5 . . . . . . . . 
+. . . . . . 5 f f 5 5 5 . . . . . . . . 
+. . . . . . f f 5 5 5 5 f f . . . . . . 
+. . . . . . 5 5 5 f f 5 f f f . . . . . 
+. . . . . . f 5 f f 5 5 f f f . . . . . 
+. . . . . f f f f 5 5 5 f f f f . . . . 
+. . . . . f f d 5 5 5 c f f f f . . . . 
+. . . . . f f d d 5 c c f f f f . . . . 
+. . . . . f f . f 1 c c f f f . . . . . 
+. . . . . . . f 1 b c c c . . . . . . . 
+. . . . 5 5 5 c b c c c c . . . . . . . 
+. . . 5 5 f f c b c c c c . . . . . . . 
+. . . 5 5 f f c f c c f f . . . . . . . 
+. . . 5 5 f f f f f f f f f . . . . . . 
+. . . . . . f f f f f f f f . . . . . . 
+. . . . . . b b . . . b b b . . . . . . 
+. . . . . f f . . . . . f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . 5 5 . . . . . . . . . . 
+. . . . . . 5 5 f f 5 5 . . . . . . . . 
+. . . . . 5 f f f f f 5 . . . . . . . . 
+. . . . . . 5 f f 5 5 5 . . . . . . . . 
+. . . . . . f f 5 5 5 5 f f . . . . . . 
+. . . . . . 5 5 5 f f 5 f f f . . . . . 
+. . . . . . f 5 f f 5 5 f f f . . . . . 
+. . . . . f f f f 5 5 5 f f f f . . . . 
+. . . . . f f d 5 5 5 c f f f f . . . . 
+. . . . . f f d d 5 c c f f f f . . . . 
+. . . . . f f . f 1 c c f f f . . . . . 
+. . . . . . . f 1 b c c c . . . . . . . 
+. . . . 5 5 5 c b c c c c . . . . . . . 
+. . . 5 5 f f c b c c c c . . . . . . . 
+. . . 5 5 f f c f c c f f . . . . . . . 
+. . . 5 5 f f f f f f f f f . . . . . . 
+. . . . . . f f f f f f f f . . . . . . 
+. . . . . . b b . . . b b b . . . . . . 
+. . . . . f f . . . . . f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . f f f f f f f . . . . . . 
+. . . . . . f f f f f f f f f . 5 . . . 
+. . . . . . f f d d f f f f 5 . . 5 . . 
+. . . . . f f f d d d f f f f 5 . 5 . . 
+. . . . . f f c d d d c 5 f f f 5 . . . 
+. . . . . f f d d d d d f 5 5 f f f . . 
+. . . . . f f . 1 f 1 c f f f f f f . . 
+. . . . . . . c f 1 c c c f f f f f . . 
+. . . . 5 5 5 c b b c c c . f f f . . . 
+. . . 5 f 5 f c b b c c c . . . . . . . 
+. . 5 f 5 f 5 c f f c f f . . . . . . . 
+. 5 5 5 f 5 f f f f f f f f . . . . . . 
+. . . 5 5 5 f f f f f f f f . . . . . . 
+. . . . 5 . b b . . . b b b . . . . . . 
+. . . . . f f . . . . . f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . f f f f f f f . . . . . . 
+. . . . . . f f f f f f f f f . . . . . 
+. . . . . . f f d d f f f f f . . . . . 
+. . . . . f f f d d d f f f f f . . . . 
+. . . . . f f c d d d c d f f f . . . . 
+. . . . . f f d d d d d d f f f . . . . 
+. . . . . f f . 1 f d 1 . f f . . . . . 
+. . . . . . . c b f 1 c c c . . 5 . . . 
+. . . . . 5 c c b 1 b c c c c 5 f 5 5 5 
+. . . 5 5 f 5 . c b b c c . c 5 f f f f 
+. . 5 f 5 5 f c f f f c f . . f f 5 5 5 
+. 5 f f f 5 5 f f f f f f f . f f f f f 
+. 5 5 5 f f f f f f f f f f . . f f f . 
+. . 5 . 5 . b b . . . b b b . . . . . . 
+. . . . 5 f f . . . . . f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . f f f f f f f . . . . . . 
+. . . . . . f f f f f f f f f . . . . . 
+. . . . . . f f d d f f f f f . . . . . 
+. . . . . f f f d d d f f f f f . . . . 
+. . . . . f f c d d d c d f f f . . . . 
+. . . . . f f d d d d d d f f f . . . . 
+. . . . . f f . 1 f d 1 . f f . 5 . . . 
+. . . . . . . c b f 1 c c c . 5 f 5 5 5 
+. . . . . 5 c c b 1 b c c c c 5 f f f f 
+. . . 5 5 f 5 . c b b c c . c f f 5 5 5 
+. . 5 f 5 5 f c f f f c f . . f f f f f 
+. 5 f f f 5 5 f f f f f f f . . f f f . 
+. 5 5 5 f f f f f f f f f f . . . . . . 
+. . 5 . 5 . b b . . . b b b . . . . . . 
+. . . . 5 f f . . . . . f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`],
+    100,
+    false
+    )
+})
 function bosslilacdialogue () {
     game.setDialogCursor(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -1848,23 +2050,24 @@ function dahlia2 () {
 . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . 
-. . . . . . f f f f f f f . . . . . . . 
-. . . . . f f f f f f f f f . . . . . . 
-. . . . . f f d d f f f f f . . . . . . 
-. . . . f f f d d d f f f f f . . . . . 
-. . . . f f c d d d c d f f f . . . . . 
-. . . . f f d d d d d d f f f . . . . . 
-. . . . f f . 1 f d 1 . f f . . . . . . 
-. . . . . . c b f 1 c c c . . . . . . . 
-. . . . 5 c c b 1 b c c . c 5 . . . . . 
-. . . 5 f 5 . c b b c c . 5 f 5 . . . . 
-. . 5 5 5 f c f f f c f . f 5 5 5 . . . 
-. . 5 f f 5 f f f f f f f 5 f f 5 . . . 
-. 5 . f f f f f f f f f f f f f . 5 . . 
-. . . 5 . 5 b b . . b b . 5 . 5 . . . . 
-. . . . . . f . . . . f . . . . . . . . 
+. . . . . . . f f f f f f f . . . . . . 
+. . . . . . f f f f f f f f f . . . . . 
+. . . . . . f f d d f f f f f . . . . . 
+. . . . . f f f d d d f f f f f . . . . 
+. . . . . f f c d d d c d f f f . . . . 
+. . . . . f f d d d d d d f f f . . . . 
+. . . . . f f . 1 f d 1 . f f . 5 . . . 
+. . . . . . . c b f 1 c c c . 5 f 5 5 5 
+. . . . . 5 c c b 1 b c c c c 5 f f f f 
+. . . 5 5 f 5 . c b b c c . c f f 5 5 5 
+. . 5 f 5 5 f c f f f c f . . f f f f f 
+. 5 f f f 5 5 f f f f f f f . . f f f . 
+. 5 5 5 f f f f f f f f f f . . . . . . 
+. . 5 . 5 . b b . . . b b b . . . . . . 
+. . . . 5 f f . . . . . f f . . . . . . 
 . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Dahlia)
+    bossdahliacalled = 1
 }
 // makes the player's sprite change when running to
 //
@@ -2439,17 +2642,20 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.LilacProjectile, function (sprit
 let projectile2: Sprite = null
 let bosslilaccalled = 0
 let projectile3: Sprite = null
-let dahlia: Sprite = null
+let bossdahliacalled = 0
 let damber: Sprite = null
 let list: Image[] = []
 let presidentfinal: Sprite = null
 let projectile4: Sprite = null
+let dahlia: Sprite = null
 let lilac: Sprite = null
 let level2real = 0
 let directionface = 0
 let president: Sprite = null
 let projectile: Sprite = null
 let amber: Sprite = null
+let rockles: Sprite = null
+let projectile5: Sprite = null
 let plankycircumstance = 0
 let planky_chr: Sprite = null
 game.setDialogCursor(img`
@@ -2512,6 +2718,11 @@ b d d 1 1 d 1 d b
         projectile2.setKind(SpriteKind.LilacProjectile)
         projectile3.setKind(SpriteKind.LilacProjectile2)
         projectile4.setKind(SpriteKind.LilacProjectile3)
+    }
+})
+game.onUpdateInterval(5000, function () {
+    if (bossdahliacalled == 1) {
+        rock()
     }
 })
 game.onUpdateInterval(5000, function () {
