@@ -10,6 +10,7 @@ namespace SpriteKind {
     export const LilacProjectile3 = SpriteKind.create()
     export const Car = SpriteKind.create()
     export const Rock = SpriteKind.create()
+    export const Stone1 = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -578,7 +579,7 @@ function planky1 () {
     plankycircumstance = 0
 }
 function rockgettingpunched () {
-    projectile5 = sprites.createProjectileFromSprite(img`
+    projectile5 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -595,32 +596,12 @@ function rockgettingpunched () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, rockles, 50, 100)
-}
-function rock () {
-    rockles = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . e d d d d . . . . . . . 
-. . . e d d d d d d . . . . . . 
-. . . e e d d d d d d d . . . . 
-. . c e e e e d d d d d d . . . 
-. . f f c e e e e d d d e . . . 
-. . c d f f f c e e e e c f . . 
-. e e d d d c f f c c f f f . . 
-. c e e d d d d c f f f f f . . 
-. f c e e e e e e f f f f f . . 
-. f f c e e e e c f f f f f . . 
-. . f f f c c c f f f f f . . . 
-. . . f f f f f f f f . . . . . 
-. . . . f f f f f . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Rock)
-    rockles.setPosition(132, 0)
-    rockles.vy = 50
-}
-function dahliabehavior () {
-	
+`, SpriteKind.Stone1)
+    projectile5.setPosition(132, 86)
+    projectile5.vx = Math.randomRange(-5, -50)
+    projectile5.ay = 500
+    projectile5.vy = -150
+    rockles.destroy()
 }
 function level1 () {
     scene.cameraFollowSprite(amber)
@@ -729,6 +710,9 @@ function plankymessages () {
         }
     }
 }
+scene.onHitWall(SpriteKind.Stone1, function (sprite) {
+    projectile5.destroy(effects.disintegrate, 100)
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile22, function (sprite, location) {
     bossdahlia()
 })
@@ -776,6 +760,9 @@ function bossdahlia () {
             TileScale.Sixteen
         ))
     dahlia2()
+}
+function dahliabehavior () {
+	
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (directionface == 0) {
@@ -1172,6 +1159,8 @@ f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
     info.setLife(5)
 }
 sprites.onOverlap(SpriteKind.Dahlia, SpriteKind.Rock, function (sprite, otherSprite) {
+    rockgettingpunched()
+    scene.cameraShake(2, 200)
     animation.runImageAnimation(
     dahlia,
     [img`
@@ -2068,6 +2057,8 @@ function dahlia2 () {
 . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Dahlia)
     bossdahliacalled = 1
+    dahlia.ay = 100
+    dahlia.setPosition(132, 101)
 }
 // makes the player's sprite change when running to
 //
@@ -2639,6 +2630,28 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.LilacProjectile, function (sprit
     projectile2.destroy()
     info.changeLifeBy(-1)
 })
+function rock () {
+    rockles = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . e d d d d . . . . . . . 
+. . . e d d d d d d . . . . . . 
+. . . e e d d d d d d d . . . . 
+. . c e e e e d d d d d d . . . 
+. . f f c e e e e d d d e . . . 
+. . c d f f f c e e e e c f . . 
+. e e d d d c f f c c f f f . . 
+. c e e d d d d c f f f f f . . 
+. f c e e e e e e f f f f f . . 
+. f f c e e e e c f f f f f . . 
+. . f f f c c c f f f f f . . . 
+. . . f f f f f f f f . . . . . 
+. . . . f f f f f . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Rock)
+    rockles.setPosition(132, 0)
+    rockles.vy = 200
+}
 let projectile2: Sprite = null
 let bosslilaccalled = 0
 let projectile3: Sprite = null
