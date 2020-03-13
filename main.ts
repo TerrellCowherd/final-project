@@ -11,65 +11,9 @@ namespace SpriteKind {
     export const Car = SpriteKind.create()
     export const Rock = SpriteKind.create()
     export const Stone1 = SpriteKind.create()
+    export const Stone2 = SpriteKind.create()
 }
 namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 5 5 7 7 7 6 6 7 7 7 7 7 7 5 5 
-5 6 7 6 c 6 c c 6 7 c 6 c 6 7 7 
-7 c 6 c e c e e c 6 c c e c 6 7 
-6 c c e e e e e e c e e e e c 6 
-c e e e e e e d e e e e e e e c 
-e e e e e e e f e e e e e e e e 
-e e d e e e e e e e e e d e e e 
-e e f e e e e e e e e e f e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e d e e e e e e e e e e 
-e e e e e f e e e e e e e e e e 
-e e e e e e e e e e d e e e e e 
-e e e e e e e e e e f e e e e e 
-e e e e e e e e e e e e e e e e 
-`
-    //% blockIdentity=images._tile
-    export const tile3 = img`
-e e e e d e e e e e e e e e e e 
-e e e e f e e e e e e e e d e e 
-e e e e e e e e e e e e e f e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e d e e e e e e e e 
-e e e e e e e f e e e e e e e e 
-e e d e e e e e e e e e d e e e 
-e e f e e e e e e e e e f e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e e e e e e e e e e e e 
-e e e e e d e e e e e e e e e e 
-e e e e e f e e e e e e e e e e 
-e e e e e e e e e e d e e e e e 
-e e e e e e e e e e f e e e e e 
-e e e e e e e e e e e e e e e e 
-`
     //% blockIdentity=images._tile
     export const tile5 = img`
 c c c c c c c c c c c c c c c c 
@@ -375,6 +319,63 @@ f f f f f f f f f f f f f f f f
 . . . . . . . . . . . . . . . . 
 `
     //% blockIdentity=images._tile
+    export const tile0 = img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`
+    //% blockIdentity=images._tile
+    export const tile1 = img`
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 7 7 7 6 6 7 7 7 7 7 7 5 5 
+5 6 7 6 c 6 c c 6 7 c 6 c 6 7 7 
+7 c 6 c e c e e c 6 c c e c 6 7 
+6 c c e e e e e e c e e e e c 6 
+c e e e e e e d e e e e e e e c 
+e e e e e e e f e e e e e e e e 
+e e d e e e e e e e e e d e e e 
+e e f e e e e e e e e e f e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e d e e e e e e e e e e 
+e e e e e f e e e e e e e e e e 
+e e e e e e e e e e d e e e e e 
+e e e e e e e e e e f e e e e e 
+e e e e e e e e e e e e e e e e 
+`
+    //% blockIdentity=images._tile
+    export const tile3 = img`
+e e e e d e e e e e e e e e e e 
+e e e e f e e e e e e e e d e e 
+e e e e e e e e e e e e e f e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e d e e e e e e e e 
+e e e e e e e f e e e e e e e e 
+e e d e e e e e e e e e d e e e 
+e e f e e e e e e e e e f e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e d e e e e e e e e e e 
+e e e e e f e e e e e e e e e e 
+e e e e e e e e e e d e e e e e 
+e e e e e e e e e e f e e e e e 
+e e e e e e e e e e e e e e e e 
+`
+    //% blockIdentity=images._tile
     export const tile23 = img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
@@ -597,11 +598,41 @@ function rockgettingpunched () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Stone1)
+    projectile6 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . e d d . . . . . . . . 
+. . . . e e d d d d . . . . . . 
+. . . . c e e d d d d . . . . . 
+. . . . f c e e e e e . . . . . 
+. . . . f f c c e e c . . . . . 
+. . . . . f f c c c f . . . . . 
+. . . . . . f f f f . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Stone2)
     projectile5.setPosition(132, 86)
-    projectile5.vx = Math.randomRange(-5, -50)
+    projectile6.setPosition(132, 86)
+    projectile5.vx = Math.randomRange(-15, -130)
+    projectile6.vx = Math.randomRange(-35, -130)
     projectile5.ay = 500
+    projectile6.ay = 500
     projectile5.vy = -150
+    projectile6.vy = -150
     rockles.destroy()
+}
+function dahliadialogue () {
+    game.showLongText("Amber: Who are you? And where is this place?", DialogLayout.Bottom)
+    game.showLongText("Dahlia: My name is Dahlia, and this is Blackwell Business. What brings you here?", DialogLayout.Bottom)
+    game.showLongText("Amber: I'm honestly just passing by.", DialogLayout.Bottom)
+    game.showLongText("Dahlia: Well, you're not allowed to leave without signing out.", DialogLayout.Bottom)
+    game.showLongText("Amber: To be honest, I'd rather put my hands on your dirty face before touching one of your sweat drenched pens.", DialogLayout.Bottom)
+    game.showLongText("Dahlia: Ah! Rude! I'll show you some proper manners, after this fight!", DialogLayout.Bottom)
 }
 function level1 () {
     scene.cameraFollowSprite(amber)
@@ -713,6 +744,9 @@ function plankymessages () {
 scene.onHitWall(SpriteKind.Stone1, function (sprite) {
     projectile5.destroy(effects.disintegrate, 100)
 })
+sprites.onOverlap(SpriteKind.Dahlia, SpriteKind.Projectile, function (sprite, otherSprite) {
+    info.player2.changeLifeBy(-1)
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile22, function (sprite, location) {
     bossdahlia()
 })
@@ -759,7 +793,10 @@ function bossdahlia () {
             [myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22,myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile23],
             TileScale.Sixteen
         ))
+    scene.setBackgroundColor(13)
+    amber.setPosition(23, 101)
     dahlia2()
+    dahliadialogue()
 }
 function dahliabehavior () {
 	
@@ -988,6 +1025,10 @@ function amberidle () {
     directionface = 0
     info.setLife(5)
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Stone1, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    projectile5.destroy()
+})
 function level2 () {
     game.setDialogCursor(img`
 . . . . . . . . . . . . . . . . 
@@ -1856,6 +1897,9 @@ function amberstopleft () {
 `)
     }
 }
+scene.onHitWall(SpriteKind.Stone2, function (sprite) {
+    projectile6.destroy(effects.disintegrate, 100)
+})
 scene.onHitWall(SpriteKind.Projectile, function (sprite) {
     if (projectile.tileKindAt(TileDirection.Right, myTiles.tile7)) {
         tiles.setTilemap(tiles.createTilemap(
@@ -2033,7 +2077,12 @@ function amberjump () {
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
     amberstopright()
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Stone2, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    projectile6.destroy()
+})
 function dahlia2 () {
+    info.player2.setLife(70)
     dahlia = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . 
@@ -2668,6 +2717,7 @@ let president: Sprite = null
 let projectile: Sprite = null
 let amber: Sprite = null
 let rockles: Sprite = null
+let projectile6: Sprite = null
 let projectile5: Sprite = null
 let plankycircumstance = 0
 let planky_chr: Sprite = null
@@ -2693,6 +2743,11 @@ game.splash("Level 1: Pseudo Future")
 planky1()
 amberidle()
 level1()
+game.onUpdateInterval(2000, function () {
+    if (bossdahliacalled == 1) {
+        rock()
+    }
+})
 game.onUpdateInterval(1500, function () {
     if (bosslilaccalled == 1) {
         projectile2 = sprites.createProjectileFromSprite(img`
@@ -2731,11 +2786,6 @@ b d d 1 1 d 1 d b
         projectile2.setKind(SpriteKind.LilacProjectile)
         projectile3.setKind(SpriteKind.LilacProjectile2)
         projectile4.setKind(SpriteKind.LilacProjectile3)
-    }
-})
-game.onUpdateInterval(5000, function () {
-    if (bossdahliacalled == 1) {
-        rock()
     }
 })
 game.onUpdateInterval(5000, function () {
