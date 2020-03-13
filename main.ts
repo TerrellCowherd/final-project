@@ -12,6 +12,7 @@ namespace SpriteKind {
     export const Rock = SpriteKind.create()
     export const Stone1 = SpriteKind.create()
     export const Stone2 = SpriteKind.create()
+    export const DamberSlash = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -2375,6 +2376,10 @@ function bosslilacdialogue () {
 `)
     game.showLongText("Lilac: Then, if you want to pass, you're gonna have to get through me. Bring it on!", DialogLayout.Bottom)
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.DamberSlash, function (sprite, otherSprite) {
+    projectile7.destroy()
+    info.changeLifeBy(-1)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.LilacProjectile3, function (sprite, otherSprite) {
     projectile4.destroy()
     info.changeLifeBy(-1)
@@ -2697,6 +2702,7 @@ function bossdarkamber () {
     projectile5.destroy()
     projectile6.destroy()
     rockles.destroy()
+    damberbosscalled = 1
     scene.setBackgroundImage(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -2862,7 +2868,6 @@ function bossdarkamber () {
 }
 function darkamber () {
     damber = sprites.create(img`
-. . . . . . . . . . . . . . . . 
 . . . . c c c c c c c c . . . . 
 . . . d d d d d c d c c c . . . 
 . . . c c b c c b c c c c . . . 
@@ -2871,13 +2876,14 @@ function darkamber () {
 . c c c b b b b b b c c c . c . 
 . . . c c 2 2 2 2 2 c . c . . . 
 . . . . . 2 2 2 2 b b . . . . . 
-. . . . . b f f f f . b . . . . 
-. . . . f . f f f f . f . . . . 
+. . . . b . f f f f . b . . . . 
+. . . f . . f f f f . . f . . . 
 . . . . . c c c c c c . . . . . 
-. . . . . f 5 5 f f f . . . . . 
-. . . . c c c c c c c c . . . . 
-. . . . c c c . c c c c . . . . 
-. . . 5 5 5 . . . . 5 5 5 . . . 
+. . . c c f 5 5 f f f . . . . . 
+. . . c c c c c c c c . . . . . 
+. . 5 5 5 . . c c c c . . . . . 
+. . . . . . . . 5 5 . . . . . . 
+. . . . . . . 5 5 . . . . . . . 
 `, SpriteKind.DarkAmber)
     damber.ay = 250
     darkamberbehavior()
@@ -3011,157 +3017,6 @@ function amberrunright () {
 function darkamberbehavior () {
     damber.setFlag(SpriteFlag.BounceOnWall, true)
     damber.vx = -65
-    if (damber.vx >= 0) {
-        animation.runImageAnimation(
-        damber,
-        [img`
-. . . . c c c c c c c c . . . . 
-. . . c c c d c d d d d d . . . 
-. . . c c c c b c c b c c . . . 
-. . c c c c b 5 c b b 5 c c . . 
-. . c c c c b 5 5 c 5 5 c c . . 
-. c . c c c b b b b b b c c c . 
-. . . c . c 2 2 2 2 2 c c . . . 
-. . . . b b b 2 2 2 2 . . f . . 
-. . . b . . f f f f b b b . . . 
-. . f . . . f f f f . . . . . . 
-. . . . . c c c c c c . . . . . 
-. . . . . f f f 5 5 f . 5 . . . 
-. . . 5 c f c c c c c c 5 . . . 
-. . . 5 c c f c c c c c 5 . . . 
-. . . 5 . c c . . c c . . . . . 
-. . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . 
-. . . . c c c c c c c c . . . . 
-. . . c c c d c d d d d d . . . 
-. . . c c c c b c c b c c . . . 
-. . c c c c b 5 c b b 5 c c . . 
-. . c c c c b 5 5 c 5 5 c c . . 
-. c . c c c b b b b b b c c c . 
-. . . c . c 2 2 2 2 2 c c . . . 
-. . . . . . b 2 2 2 2 . . . . . 
-. . . . . b f f f f b . . . . . 
-. . . . . b b f f f b f . . . . 
-. . . . . c c c c c c . . . . . 
-. . . . . f f f 5 5 f . . . . . 
-. . . . . c c c c c c . . . . . 
-. . . . . c c c f c c . . . . . 
-. . . . . 5 5 5 . 5 5 5 . . . . 
-`,img`
-. . . . c c c c c c c c . . . . 
-. . . c c c d c d d d d d . . . 
-. . . c c c c b c c b c c . . . 
-. . c c c c b 5 c b b 5 c c . . 
-. . c c c c b 5 5 c 5 5 c c . . 
-. c . c c c b b b b b b c c c . 
-. . . c . c 2 2 2 2 2 c c . . . 
-. . . . b b f f b 2 2 . . c . . 
-. . . b . . f f f b b b b . . . 
-. . c . . . f f f f . . . . . . 
-. . . . . c c c c c c . . . . . 
-. . . . . f f f f 5 5 . 5 . . . 
-. . . 5 c c c c c c f c 5 . . . 
-. . . 5 c c c c c f c c 5 . . . 
-. . . 5 . c c . . c c . . . . . 
-. . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . 
-. . . . c c c c c c c c . . . . 
-. . . c c c d c d d d d d . . . 
-. . . c c c c b c c b c c . . . 
-. . c c c c b 5 c b b 5 c c . . 
-. . c c c c b 5 5 c 5 5 c c . . 
-. c . c c c b b b b b b c c c . 
-. . . c . c 2 2 2 2 2 c c . . . 
-. . . . . . b 2 2 2 2 . . . . . 
-. . . . . b f f f f b . . . . . 
-. . . . . b b f f f b f . . . . 
-. . . . . c c c c c c . . . . . 
-. . . . . f f f 5 5 f . . . . . 
-. . . . . c c c c c c . . . . . 
-. . . . . c c c f c c . . . . . 
-. . . . . 5 5 5 . 5 5 5 . . . . 
-`],
-        200,
-        true
-        )
-    } else {
-        animation.runImageAnimation(
-        damber,
-        [img`
-. . . . c c c c c c c c . . . . 
-. . . d d d d d c d c c c . . . 
-. . . c c b c c b c c c c . . . 
-. . c c 5 b b c 5 b c c c c . . 
-. . c c 5 5 c 5 5 b c c c c . . 
-. c c c b b b b b b c c c . c . 
-. . . c c 2 2 2 2 2 c . c . . . 
-. . f . . 2 2 2 2 b b b . . . . 
-. . . b b b f f f f . . b . . . 
-. . . . . . f f f f . . . f . . 
-. . . . . c c c c c c . . . . . 
-. . . 5 . f 5 5 f f f . . . . . 
-. . . 5 c c c c c c f c 5 . . . 
-. . . 5 c c c c c f c c 5 . . . 
-. . . . . c c . . c c . 5 . . . 
-. . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . 
-. . . . c c c c c c c c . . . . 
-. . . d d d d d c d c c c . . . 
-. . . c c b c c b c c c c . . . 
-. . c c 5 b b c 5 b c c c c . . 
-. . c c 5 5 c 5 5 b c c c c . . 
-. c c c b b b b b b c c c . c . 
-. . . c c 2 2 2 2 2 c . c . . . 
-. . . . . 2 2 2 2 b . . . . . . 
-. . . . . b f f f f b . . . . . 
-. . . . f b f f f b b . . . . . 
-. . . . . c c c c c c . . . . . 
-. . . . . f 5 5 f f f . . . . . 
-. . . . . c c c c c c . . . . . 
-. . . . . c c f c c c . . . . . 
-. . . . 5 5 5 . 5 5 5 . . . . . 
-`,img`
-. . . . c c c c c c c c . . . . 
-. . . d d d d d c d c c c . . . 
-. . . c c b c c b c c c c . . . 
-. . c c 5 b b c 5 b c c c c . . 
-. . c c 5 5 c 5 5 b c c c c . . 
-. c c c b b b b b b c c c . c . 
-. . . c c 2 2 2 2 2 c . c . . . 
-. . f . . 2 2 b f f b b . . . . 
-. . . b b b b f f f . . b . . . 
-. . . . . . f f f f . . . f . . 
-. . . . . c c c c c c . . . . . 
-. . . 5 . 5 5 f f f f . . . . . 
-. . . 5 c f c c c c c c 5 . . . 
-. . . 5 c c f c c c c c 5 . . . 
-. . . . . c c . . c c . 5 . . . 
-. . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . 
-. . . . c c c c c c c c . . . . 
-. . . d d d d d c d c c c . . . 
-. . . c c b c c b c c c c . . . 
-. . c c 5 b b c 5 b c c c c . . 
-. . c c 5 5 c 5 5 b c c c c . . 
-. c c c b b b b b b c c c . c . 
-. . . c c 2 2 2 2 2 c . c . . . 
-. . . . . 2 2 2 2 b . . . . . . 
-. . . . . b f f f f b . . . . . 
-. . . . f b f f f b b . . . . . 
-. . . . . c c c c c c . . . . . 
-. . . . . f 5 5 f f f . . . . . 
-. . . . . c c c c c c . . . . . 
-. . . . . c c f c c c . . . . . 
-. . . . 5 5 5 . 5 5 5 . . . . . 
-`],
-        200,
-        true
-        )
-    }
 }
 function dahliadialogue () {
     game.setDialogCursor(img`
@@ -4423,9 +4278,11 @@ let bosslilaccalled = 0
 let projectile3: Sprite = null
 let bossdahliacalled = 0
 let damber: Sprite = null
+let damberbosscalled = 0
 let list: Image[] = []
 let presidentfinal: Sprite = null
 let projectile4: Sprite = null
+let projectile7: Sprite = null
 let dahlia: Sprite = null
 let lilac: Sprite = null
 let level2real = 0
@@ -4503,6 +4360,103 @@ b d d 1 1 d 1 d b
         projectile2.setKind(SpriteKind.LilacProjectile)
         projectile3.setKind(SpriteKind.LilacProjectile2)
         projectile4.setKind(SpriteKind.LilacProjectile3)
+    }
+})
+game.onUpdateInterval(500, function () {
+    if (damberbosscalled == 1) {
+        projectile7 = sprites.createProjectileFromSprite(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, damber, -200, 0)
+        projectile7.setKind(SpriteKind.DamberSlash)
+        animation.runImageAnimation(
+        projectile7,
+        [img`
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 
+. . . . . . 2 2 2 2 2 2 2 2 2 . . . . . 
+. . 2 2 2 2 2 2 2 . . . . . . . . . . . 
+. 2 2 2 2 2 . . . . . . . . . . . . . . 
+2 2 2 2 . . . . . . . . . . . . . . . . 
+2 2 . . . . . . . . . . . . . . . . . . 
+2 2 2 . . . . . . . . . . . . . . . . . 
+2 2 2 2 2 2 2 . . . . . . . . . . . . . 
+. 2 2 2 2 2 2 2 2 . . . . . . . . . . . 
+. . 2 2 2 2 2 2 2 2 2 2 . . . . . . . . 
+. . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 
+. . . . . . . . . 2 2 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . 2 2 2 2 2 2 2 2 
+. . . . . . . . 2 2 2 2 2 2 2 . . . . . 
+. . . . . 2 2 2 2 . . . . . . . . . . . 
+. . . 2 2 2 . . . . . . . . . . . . . . 
+. . 2 . . . . . . . . . . . . . . . . . 
+. 2 . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . 2 2 2 2 2 
+. . . . . . . . . . . 2 2 2 2 . . . . . 
+. . . . . . . . 2 . . . . . . . . . . . 
+. . . . . 2 . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`],
+        50,
+        false
+        )
     }
 })
 forever(function () {
