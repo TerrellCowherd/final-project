@@ -842,6 +842,10 @@ function bossdahliaend () {
     game.showLongText("Amber: Thank you!", DialogLayout.Bottom)
     bossdarkamber()
 }
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.DarkAmber, function (sprite, otherSprite) {
+    projectile.destroy()
+    info.player2.changeLifeBy(-1)
+})
 function level1 () {
     scene.cameraFollowSprite(amber)
     tiles.setTilemap(tiles.createTilemap(
@@ -954,6 +958,7 @@ scene.onHitWall(SpriteKind.Stone1, function (sprite) {
 })
 sprites.onOverlap(SpriteKind.Dahlia, SpriteKind.Projectile, function (sprite, otherSprite) {
     info.player2.changeLifeBy(-1)
+    projectile.destroy()
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile22, function (sprite, location) {
     bossdahlia()
@@ -2861,6 +2866,7 @@ function bossdarkamber () {
 . . . . . . . . . . . . . . . . 
 `)
     game.splash("Level 3: Shadow Leader")
+    info.player2.setLife(60)
     darkamberdialogue()
     darkamber()
     amber.setPosition(23, 101)
@@ -4288,8 +4294,8 @@ let lilac: Sprite = null
 let level2real = 0
 let directionface = 0
 let president: Sprite = null
-let projectile: Sprite = null
 let amber: Sprite = null
+let projectile: Sprite = null
 let rockles: Sprite = null
 let projectile6: Sprite = null
 let projectile5: Sprite = null
