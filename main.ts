@@ -626,15 +626,6 @@ function rockgettingpunched () {
     projectile6.vy = -150
     rockles.destroy()
 }
-function darkamberbehavior () {
-    damber.setFlag(SpriteFlag.BounceOnWall, true)
-    damber.vx = -65
-    if (damber.vx >= 1) {
-    	
-    } else {
-    	
-    }
-}
 function bossdahliaend () {
     game.setDialogCursor(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -2579,6 +2570,8 @@ function amberportraits () {
 `]
 }
 function bossdarkamber () {
+    amber.setPosition(23, 101)
+    dahlia.destroy()
     scene.setBackgroundColor(15)
     tiles.setTilemap(tiles.createTilemap(
             hex`1000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000303030303030303030303030303030303030303030303030303030303030303`,
@@ -2603,6 +2596,8 @@ function bossdarkamber () {
             [myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22,myTiles.tile23],
             TileScale.Sixteen
         ))
+    darkamberdialogue()
+    darkamber()
 }
 function darkamber () {
     damber = sprites.create(img`
@@ -2624,6 +2619,7 @@ function darkamber () {
 . . . 5 5 5 . . . . 5 5 5 . . . 
 `, SpriteKind.DarkAmber)
     damber.ay = 250
+    darkamberbehavior()
 }
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
     bosslilac()
@@ -2745,6 +2741,161 @@ function amberrunright () {
 . . . . . 6 6 6 6 6 6 . . . . . 
 . . . . . 6 6 6 c 6 6 . . . . . 
 . . . . . d d d . d d d . . . . 
+`],
+        200,
+        true
+        )
+    }
+}
+function darkamberbehavior () {
+    damber.setFlag(SpriteFlag.BounceOnWall, true)
+    damber.vx = -65
+    if (damber.vx >= 1) {
+        animation.runImageAnimation(
+        damber,
+        [img`
+. . . . c c c c c c c c . . . . 
+. . . c c c d c d d d d d . . . 
+. . . c c c c b c c b c c . . . 
+. . c c c c b 5 c b b 5 c c . . 
+. . c c c c b 5 5 c 5 5 c c . . 
+. c . c c c b b b b b b c c c . 
+. . . c . c 2 2 2 2 2 c c . . . 
+. . . . b b b 2 2 2 2 . . f . . 
+. . . b . . f f f f b b b . . . 
+. . f . . . f f f f . . . . . . 
+. . . . . c c c c c c . . . . . 
+. . . . . f f f 5 5 f . 5 . . . 
+. . . 5 c f c c c c c c 5 . . . 
+. . . 5 c c f c c c c c 5 . . . 
+. . . 5 . c c . . c c . . . . . 
+. . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . 
+. . . . c c c c c c c c . . . . 
+. . . c c c d c d d d d d . . . 
+. . . c c c c b c c b c c . . . 
+. . c c c c b 5 c b b 5 c c . . 
+. . c c c c b 5 5 c 5 5 c c . . 
+. c . c c c b b b b b b c c c . 
+. . . c . c 2 2 2 2 2 c c . . . 
+. . . . . . b 2 2 2 2 . . . . . 
+. . . . . b f f f f b . . . . . 
+. . . . . b b f f f b f . . . . 
+. . . . . c c c c c c . . . . . 
+. . . . . f f f 5 5 f . . . . . 
+. . . . . c c c c c c . . . . . 
+. . . . . c c c f c c . . . . . 
+. . . . . 5 5 5 . 5 5 5 . . . . 
+`,img`
+. . . . c c c c c c c c . . . . 
+. . . c c c d c d d d d d . . . 
+. . . c c c c b c c b c c . . . 
+. . c c c c b 5 c b b 5 c c . . 
+. . c c c c b 5 5 c 5 5 c c . . 
+. c . c c c b b b b b b c c c . 
+. . . c . c 2 2 2 2 2 c c . . . 
+. . . . b b f f b 2 2 . . c . . 
+. . . b . . f f f b b b b . . . 
+. . c . . . f f f f . . . . . . 
+. . . . . c c c c c c . . . . . 
+. . . . . f f f f 5 5 . 5 . . . 
+. . . 5 c c c c c c f c 5 . . . 
+. . . 5 c c c c c f c c 5 . . . 
+. . . 5 . c c . . c c . . . . . 
+. . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . 
+. . . . c c c c c c c c . . . . 
+. . . c c c d c d d d d d . . . 
+. . . c c c c b c c b c c . . . 
+. . c c c c b 5 c b b 5 c c . . 
+. . c c c c b 5 5 c 5 5 c c . . 
+. c . c c c b b b b b b c c c . 
+. . . c . c 2 2 2 2 2 c c . . . 
+. . . . . . b 2 2 2 2 . . . . . 
+. . . . . b f f f f b . . . . . 
+. . . . . b b f f f b f . . . . 
+. . . . . c c c c c c . . . . . 
+. . . . . f f f 5 5 f . . . . . 
+. . . . . c c c c c c . . . . . 
+. . . . . c c c f c c . . . . . 
+. . . . . 5 5 5 . 5 5 5 . . . . 
+`],
+        200,
+        true
+        )
+    } else {
+        animation.runImageAnimation(
+        damber,
+        [img`
+. . . . c c c c c c c c . . . . 
+. . . d d d d d c d c c c . . . 
+. . . c c b c c b c c c c . . . 
+. . c c 5 b b c 5 b c c c c . . 
+. . c c 5 5 c 5 5 b c c c c . . 
+. c c c b b b b b b c c c . c . 
+. . . c c 2 2 2 2 2 c . c . . . 
+. . f . . 2 2 2 2 b b b . . . . 
+. . . b b b f f f f . . b . . . 
+. . . . . . f f f f . . . f . . 
+. . . . . c c c c c c . . . . . 
+. . . 5 . f 5 5 f f f . . . . . 
+. . . 5 c c c c c c f c 5 . . . 
+. . . 5 c c c c c f c c 5 . . . 
+. . . . . c c . . c c . 5 . . . 
+. . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . 
+. . . . c c c c c c c c . . . . 
+. . . d d d d d c d c c c . . . 
+. . . c c b c c b c c c c . . . 
+. . c c 5 b b c 5 b c c c c . . 
+. . c c 5 5 c 5 5 b c c c c . . 
+. c c c b b b b b b c c c . c . 
+. . . c c 2 2 2 2 2 c . c . . . 
+. . . . . 2 2 2 2 b . . . . . . 
+. . . . . b f f f f b . . . . . 
+. . . . f b f f f b b . . . . . 
+. . . . . c c c c c c . . . . . 
+. . . . . f 5 5 f f f . . . . . 
+. . . . . c c c c c c . . . . . 
+. . . . . c c f c c c . . . . . 
+. . . . 5 5 5 . 5 5 5 . . . . . 
+`,img`
+. . . . c c c c c c c c . . . . 
+. . . d d d d d c d c c c . . . 
+. . . c c b c c b c c c c . . . 
+. . c c 5 b b c 5 b c c c c . . 
+. . c c 5 5 c 5 5 b c c c c . . 
+. c c c b b b b b b c c c . c . 
+. . . c c 2 2 2 2 2 c . c . . . 
+. . f . . 2 2 b f f b b . . . . 
+. . . b b b b f f f . . b . . . 
+. . . . . . f f f f . . . f . . 
+. . . . . c c c c c c . . . . . 
+. . . 5 . 5 5 f f f f . . . . . 
+. . . 5 c f c c c c c c 5 . . . 
+. . . 5 c c f c c c c c 5 . . . 
+. . . . . c c . . c c . 5 . . . 
+. . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . 
+. . . . c c c c c c c c . . . . 
+. . . d d d d d c d c c c . . . 
+. . . c c b c c b c c c c . . . 
+. . c c 5 b b c 5 b c c c c . . 
+. . c c 5 5 c 5 5 b c c c c . . 
+. c c c b b b b b b c c c . c . 
+. . . c c 2 2 2 2 2 c . c . . . 
+. . . . . 2 2 2 2 b . . . . . . 
+. . . . . b f f f f b . . . . . 
+. . . . f b f f f b b . . . . . 
+. . . . . c c c c c c . . . . . 
+. . . . . f 5 5 f f f . . . . . 
+. . . . . c c c c c c . . . . . 
+. . . . . c c f c c c . . . . . 
+. . . . 5 5 5 . 5 5 5 . . . . . 
 `],
         200,
         true
@@ -4010,6 +4161,7 @@ let projectile2: Sprite = null
 let bosslilaccalled = 0
 let projectile3: Sprite = null
 let bossdahliacalled = 0
+let damber: Sprite = null
 let list: Image[] = []
 let presidentfinal: Sprite = null
 let projectile4: Sprite = null
@@ -4020,7 +4172,6 @@ let directionface = 0
 let president: Sprite = null
 let projectile: Sprite = null
 let amber: Sprite = null
-let damber: Sprite = null
 let rockles: Sprite = null
 let projectile6: Sprite = null
 let projectile5: Sprite = null
