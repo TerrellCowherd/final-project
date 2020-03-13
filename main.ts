@@ -13,6 +13,7 @@ namespace SpriteKind {
     export const Stone1 = SpriteKind.create()
     export const Stone2 = SpriteKind.create()
     export const DamberSlash = SpriteKind.create()
+    export const PresHeart = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -626,6 +627,78 @@ function rockgettingpunched () {
     projectile5.vy = -150
     projectile6.vy = -150
     rockles.destroy()
+}
+function presheart () {
+    presidentheart = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. d . . . . . . . . . . . . . . . . . . . . . . . . . . . . d . 
+. d d . . . . . . . . . . . . . . . . . . . . . . . . . . d d . 
+. . d d . . . . . . . . . . . . . . . . . . . . . . . . d d . . 
+. . d 1 d . . . . . . . . . . . . . . . . . . . . . . d 1 d . . 
+. . . 1 1 d . . . . . . . . . . . . . . . . . . . . d 1 1 . . . 
+. d . d 1 1 d . . . . . . . . . . . . . . . . . . d 1 1 d . d . 
+. d 1 1 . 1 1 d . . . . . . . . . . . . . . . . d 1 1 . 1 1 d . 
+. . d 1 1 1 1 1 d . . . . . . . . . . . . . . d 1 1 1 1 1 d . . 
+. . d 1 1 1 1 1 1 d . . . . . . . . . . . . d 1 1 1 1 1 1 d . . 
+. . . d 1 1 1 1 1 1 1 d . . . . . . . . d 1 1 1 1 1 1 1 d . . . 
+. d . . 1 1 1 1 1 1 1 1 1 d . . . . d 1 1 1 1 1 1 1 1 1 . . d . 
+. d 1 1 . 1 1 1 1 1 1 1 1 1 d d d d 1 1 1 1 1 1 1 1 1 . 1 1 d . 
+. . d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 d . . 
+. . . d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 d . . . 
+. d . . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . . d . 
+. . d 1 . 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . 1 d . . 
+. . . d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 d . . . 
+. . . . d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 d . . . . 
+. . . . . d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 d . . . . . 
+. . . . . . d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 d . . . . . . 
+. . . . . . . d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 d . . . . . . . 
+. . . . . . . . d 1 1 1 1 1 1 1 1 1 1 1 1 1 1 d . . . . . . . . 
+. . . . . . . . . d 1 1 1 1 1 1 1 1 1 1 1 1 d . . . . . . . . . 
+. . . . . . . . . . d 1 1 1 1 1 1 1 1 1 1 d . . . . . . . . . . 
+. . . . . . . . . . . d 1 1 1 1 1 1 1 1 d . . . . . . . . . . . 
+. . . . . . . . . . . . d 1 1 1 1 1 1 d . . . . . . . . . . . . 
+. . . . . . . . . . . . . d 1 1 1 1 d . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . d 1 1 d . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . d d . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.PresHeart)
+}
+function presidentdialogue () {
+    game.showLongText("???: Well done on getting here, Ms. Amber. I've certainly underestimated you.", DialogLayout.Bottom)
+    game.showLongText("Amber: Wait a sec... Mr. President?", DialogLayout.Bottom)
+    game.showLongText("Pres: It seems you were able to recognize me fairly quickly. Good job. I certainly hope you understand what you're trying to do.", DialogLayout.Bottom)
+    game.showLongText("Amber: Not really. This game doesn't really have a plot, does it?", DialogLayout.Bottom)
+    game.showLongText("Pres: Haha, well then. Let's not waste any time!", DialogLayout.Bottom)
+    game.showLongText("Pres: Let the final battle begin!", DialogLayout.Bottom)
+}
+function bosspresident () {
+    damber.destroy()
+    effects.blizzard.endScreenEffect()
+    scene.setBackgroundColor(8)
+    effects.starField.startScreenEffect()
+    tiles.setTilemap(tiles.createTilemap(
+            hex`0a000900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a`,
+            img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 
+`,
+            [myTiles.tile0,myTiles.tile1,myTiles.tile3,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile22,myTiles.tile23],
+            TileScale.Sixteen
+        ))
+    game.splash("Level 4: High Above America")
+    info.setLife(5)
+    amber.setPosition(23, 101)
+    presidentdialogue()
+    president2()
+    presheart()
 }
 function bossdahliaend () {
     game.setDialogCursor(img`
@@ -1850,6 +1923,7 @@ function bossdarkamberend () {
 . . . . . . . . . f b d d d d c f f f c c c c c c c c c c c c c c f c f . . . . . . . . . . . . . . 
 `)
     game.showLongText("Amber: Love ya, too!", DialogLayout.Bottom)
+    bosspresident()
 }
 sprites.onOverlap(SpriteKind.Dahlia, SpriteKind.Rock, function (sprite, otherSprite) {
     rockgettingpunched()
@@ -2492,6 +2566,7 @@ function president2 () {
 . . . . . . . . . . . . . . . . . . . . . . . . . . f c c f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f c c f . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . f c c f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f c c f . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.PresidentFinal)
+    presidentfinal.y += 2
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     amberjump()
@@ -2831,6 +2906,7 @@ function bossdarkamber () {
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `)
     scene.setBackgroundColor(15)
+    effects.blizzard.startScreenEffect()
     tiles.setTilemap(tiles.createTilemap(
             hex`0a000900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000303030303030303030303030303030303030303`,
             img`
@@ -2866,6 +2942,7 @@ function bossdarkamber () {
 . . . . . . . . . . . . . . . . 
 `)
     game.splash("Level 3: Shadow Leader")
+    info.setLife(5)
     info.player2.setLife(60)
     darkamberdialogue()
     darkamber()
@@ -4283,7 +4360,6 @@ let projectile2: Sprite = null
 let bosslilaccalled = 0
 let projectile3: Sprite = null
 let bossdahliacalled = 0
-let damber: Sprite = null
 let damberbosscalled = 0
 let list: Image[] = []
 let presidentfinal: Sprite = null
@@ -4294,8 +4370,10 @@ let lilac: Sprite = null
 let level2real = 0
 let directionface = 0
 let president: Sprite = null
-let amber: Sprite = null
 let projectile: Sprite = null
+let amber: Sprite = null
+let damber: Sprite = null
+let presidentheart: Sprite = null
 let rockles: Sprite = null
 let projectile6: Sprite = null
 let projectile5: Sprite = null
@@ -4473,6 +4551,9 @@ forever(function () {
         } else if (bossdahliacalled == 1) {
             bossdahliacalled = 0
             bossdahliaend()
+        } else if (damberbosscalled == 1) {
+            damberbosscalled = 0
+            bossdarkamberend()
         } else {
         	
         }
